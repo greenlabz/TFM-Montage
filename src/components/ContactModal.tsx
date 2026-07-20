@@ -1,9 +1,9 @@
 'use client';
 
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { Check, Loader2, X } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -14,6 +14,13 @@ type ContactModalProps = {
 export default function ContactModal({ isOpen, onClose, origin }: ContactModalProps) {
   const reduceMotion = useReducedMotion();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const requestRef = useRef<HTMLTextAreaElement>(null);
+
   const viewportCenter = typeof window === 'undefined'
     ? { x: 0, y: 0 }
     : { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -24,27 +31,75 @@ export default function ContactModal({ isOpen, onClose, origin }: ContactModalPr
     ? { opacity: 0 }
     : { opacity: 0.15, scale: 0.12, x: originOffset.x, y: originOffset.y, borderRadius: '999px' };
 
+  const timeouts = useRef<number[]>([]);
+
   const closeModal = () => {
     setSubmitted(false);
+    setError(null);
+    setLoading(false);
     onClose();
   };
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    if (!isOpen) return;
 
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setSubmitted(false);
-        onClose();
-      }
+      if (event.key === 'Escape') closeModal();
     };
 
-    if (isOpen) window.addEventListener('keydown', closeOnEscape);
+    window.addEventListener('keydown', closeOnEscape);
+    const focusTimer = window.setTimeout(() => nameRef.current?.focus(), 80);
+    timeouts.current.push(focusTimer);
+
     return () => {
-      document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', closeOnEscape);
+      clearTimeout(focusTimer);
+      timeouts.current = timeouts.current.filter((t) => t !== focusTimer);
     };
-  }, [isOpen, onClose]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const request = String(data.get('request') || '').trim();
+
+    if (!name || !email || !request) {
+      setError('Bitte alle Felder ausfüllen.');
+      return;
+    }
+
+    setError(null);
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/send-confirmation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, request })
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+        setError(result.error || 'Versand fehlgeschlagen.');
+        setLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setLoading(false);
+      form.reset();
+    } catch {
+      setError('Technischer Fehler. Bitte später erneut versuchen.');
+      setLoading(false);
+    }
+  };
+
+  const inputClasses =
+    'min-h-11 w-full rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-base text-white outline-none transition-[border-color,box-shadow] placeholder:text-white/30 focus:border-[#86aaa6] focus:shadow-[0_0_0_3px_rgba(134,170,166,0.15)] disabled:opacity-60';
 
   return (
     <AnimatePresence>
@@ -108,7 +163,7 @@ export default function ContactModal({ isOpen, onClose, origin }: ContactModalPr
                   <span className="mb-4 font-display text-xs uppercase tracking-[0.28em] text-[#86aaa6]">Vielen Dank</span>
                   <h2 id="contact-modal-title" className="font-display text-2xl font-bold leading-tight sm:text-4xl">Danke für deine Anfrage.</h2>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:text-base">
-                    Die Versandfunktion wird derzeit eingerichtet.
+                    Ich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.
                   </p>
                   <button type="button" onClick={closeModal} className="conversion-cta mt-6 rounded-full px-8 py-3 font-display text-xs uppercase tracking-[0.18em]">
                     Fenster schließen
@@ -128,21 +183,70 @@ export default function ContactModal({ isOpen, onClose, origin }: ContactModalPr
                     <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-white/60">Drei Angaben reichen für den ersten Kontakt.</p>
                   </div>
 
-                  <form className="flex flex-col gap-3">
+                  <form ref={formRef} className="flex flex-col gap-3" onSubmit={handleSubmit}>
                     <div>
                       <label htmlFor="modal-name" className="mb-1 block font-display text-xs uppercase tracking-widest text-white/65">Name</label>
-                      <input autoFocus type="text" id="modal-name" name="name" autoComplete="name" required placeholder="Dein Name" className="min-h-11 w-full rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-base text-white outline-none transition-[border-color,box-shadow] placeholder:text-white/30 focus:border-[#86aaa6] focus:shadow-[0_0_0_3px_rgba(134,170,166,0.15)]" />
+                      <input
+                        ref={nameRef}
+                        autoFocus
+                        type="text"
+                        id="modal-name"
+                        name="name"
+                        autoComplete="name"
+                        required
+                        placeholder="Dein Name"
+                        className={inputClasses}
+                        minLength={2}
+                        maxLength={120}
+                        disabled={loading}
+                      />
                     </div>
                     <div>
                       <label htmlFor="modal-email" className="mb-1 block font-display text-xs uppercase tracking-widest text-white/65">E-Mail</label>
-                      <input type="email" id="modal-email" name="email" autoComplete="email" required placeholder="name@beispiel.de" className="min-h-11 w-full rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-base text-white outline-none transition-[border-color,box-shadow] placeholder:text-white/30 focus:border-[#86aaa6] focus:shadow-[0_0_0_3px_rgba(134,170,166,0.15)]" />
+                      <input
+                        ref={emailRef}
+                        type="email"
+                        id="modal-email"
+                        name="email"
+                        autoComplete="email"
+                        required
+                        placeholder="name@beispiel.de"
+                        className={inputClasses}
+                        disabled={loading}
+                      />
                     </div>
                     <div>
                       <label htmlFor="modal-request" className="mb-1 block font-display text-xs uppercase tracking-widest text-white/65">Anliegen</label>
-                      <textarea id="modal-request" name="request" rows={3} required placeholder="Beschreibe kurz dein Projekt oder deine Frage …" className="w-full resize-none rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-base text-white outline-none transition-[border-color,box-shadow] placeholder:text-white/30 focus:border-[#86aaa6] focus:shadow-[0_0_0_3px_rgba(134,170,166,0.15)]" />
+                      <textarea
+                        ref={requestRef}
+                        id="modal-request"
+                        name="request"
+                        rows={3}
+                        required
+                        placeholder="Beschreibe kurz dein Projekt oder deine Frage …"
+                        className={inputClasses}
+                        disabled={loading}
+                      />
                     </div>
-                    <button type="button" disabled aria-disabled="true" className="conversion-cta min-h-11 w-full cursor-not-allowed rounded-full px-10 py-3 font-display text-sm font-bold uppercase tracking-widest opacity-55">
-                      Anfrage senden
+
+                    {error ? (
+                      <p className="text-center text-sm text-red-400">{error}</p>
+                    ) : null}
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      aria-disabled={loading}
+                      className="conversion-cta inline-flex items-center justify-center gap-2 min-h-11 w-full rounded-full px-10 py-3 font-display text-sm font-bold uppercase tracking-widest disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {loading ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                          <span>Senden …</span>
+                        </>
+                      ) : (
+                        <span>Anfrage senden</span>
+                      )}
                     </button>
                   </form>
                 </motion.div>
