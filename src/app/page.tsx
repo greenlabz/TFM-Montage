@@ -397,12 +397,14 @@ export default function Home() {
   const galleryRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: galleryProgress } = useScroll({
     target: galleryRef,
+    offset: ['start start', 'end end']
   });
   const galleryX = useTransform(galleryProgress, [0, 1], ["0%", "-60%"]);
 
   const gallery2Ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress: gallery2Progress } = useScroll({
     target: gallery2Ref,
+    offset: ['start start', 'end end']
   });
   const gallery2X = useTransform(gallery2Progress, [0, 1], ["0%", "-60%"]);
 
@@ -410,6 +412,7 @@ export default function Home() {
   const gallery4Ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress: gallery4Progress } = useScroll({
     target: gallery4Ref,
+    offset: ['start start', 'end end']
   });
   const gallery4X = useTransform(gallery4Progress, [0, 1], ["0%", "-60%"]);
 
