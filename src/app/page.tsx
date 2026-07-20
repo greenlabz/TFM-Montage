@@ -434,6 +434,8 @@ export default function Home() {
     }
     return null;
   });
+  const [cookieBannerRevealed, setCookieBannerRevealed] = useState(false);
+  const cookieBannerRevealedRef = useRef(false);
   const [showDownload, setShowDownload] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [contactOrigin, setContactOrigin] = useState<{ x: number; y: number } | null>(null);
@@ -478,6 +480,14 @@ export default function Home() {
       setIsLightSection(light)
       setIsNavCollapsed(collapseNav)
       if (!collapseNav) setIsMenuOpen(false)
+
+      if (!cookieBannerRevealedRef.current && aboutRef.current) {
+        const r = aboutRef.current.getBoundingClientRect()
+        if (r.top < viewportHeight && r.bottom > 0) {
+          cookieBannerRevealedRef.current = true
+          setCookieBannerRevealed(true)
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -831,8 +841,8 @@ export default function Home() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#212121] to-[#3a3a3a]">Montage oder Handwerksleistung gefällig?</span>
           </motion.h1>
           <motion.p variants={fadeIn} className="font-body text-xl font-bold text-[#3a3a3a] max-w-2xl mx-auto mb-12">
-            Persönlich, fachlich, regional. 
-            Mit dem Auge für das Detail und der Präzision eines Künstlers.
+            Persönlich, fachlich, regional.
+            Mit dem Auge für das Detail
           </motion.p>
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-start justify-center gap-3">
             <div className="w-full sm:w-auto text-center">
@@ -869,10 +879,6 @@ export default function Home() {
             <div className="flex items-center gap-3 px-8 md:px-12">
               <span className="font-display text-[#9f9f8c] uppercase tracking-[0.2em] text-xs">Google Bewertungen</span>
               <span className="text-[#9f9f8c] text-sm tracking-wide">★★★★★</span>
-            </div>
-            <div className="flex items-center gap-3 px-8 md:px-12">
-              <span className="font-display text-[#9f9f8c] uppercase tracking-[0.2em] text-xs">Jahre Erfahrung</span>
-              <span className="font-display text-2xl md:text-3xl font-bold text-white">23</span>
             </div>
             <div className="flex items-center gap-3 px-8 md:px-12">
               <span className="font-display text-[#9f9f8c] uppercase tracking-[0.2em] text-xs">Anzahl Projekte</span>
@@ -1414,8 +1420,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <CookieBanner isOpen={cookieConsent === null} onClose={handleConsent} />
-
+      <CookieBanner isOpen={cookieConsent === null && cookieBannerRevealed} onClose={handleConsent} />
       <ContactModal isOpen={isContactModalOpen} origin={contactOrigin} onClose={() => setIsContactModalOpen(false)} />
     </div>
   );
