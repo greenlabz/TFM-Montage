@@ -16,23 +16,17 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tf-m.de"),
-  title: "Thomas Frenzel | Montage & Handwerk in Böblingen",
-  description: "Persönliche Montage- und Handwerksarbeiten in Böblingen und Umgebung: Möbel, Innenausbau, Reparaturen, Terrassen und Holzkonstruktionen.",
+  title: {
+    default: "Thomas Frenzel · Montage & Handwerk in Böblingen",
+    template: "%s · TFM Montage",
+  },
+  description:
+    "Persönliche Montage- und Handwerksarbeiten von Thomas Frenzel in Böblingen und Umgebung.",
   applicationName: "Thomas Frenzel Montage & Handwerk",
   authors: [{ name: "Thomas Frenzel", url: "https://www.tf-m.de" }],
   creator: "Thomas Frenzel",
   publisher: "Thomas Frenzel Montage & Handwerk",
   category: "Handwerk",
-  keywords: [
-    "Montage Böblingen",
-    "Holzarbeiten Böblingen",
-    "Möbelmontage Böblingen",
-    "Innenausbau Holz",
-    "Holzreparatur",
-    "Holzterrasse",
-    "Holzkonstruktionen",
-    "Handwerker Kreis Böblingen",
-  ],
   alternates: {
     canonical: "https://www.tf-m.de",
   },
@@ -51,16 +45,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: "https://www.tf-m.de",
+    title: "Thomas Frenzel · Montage & Handwerk in Böblingen",
     siteName: "Thomas Frenzel Montage & Handwerk",
-    title: "Thomas Frenzel | Montage & Handwerk in Böblingen",
-    description: "Persönliche Montage- und Handwerksarbeiten in Böblingen und Umgebung – klar geplant und sauber ausgeführt.",
-    images: [{ url: "/og-tfm.jpg", width: 1200, height: 630, alt: "Thomas Frenzel Montage und Handwerk" }],
+    description:
+      "Persönliche Montage- und Handwerksarbeiten von Thomas Frenzel in Böblingen.",
+    images: [
+      {
+        url: "/og-tfm.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Thomas Frenzel Montage und Handwerk",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thomas Frenzel | Montage & Handwerk in Böblingen",
-    description: "Persönliche Montage- und Handwerksarbeiten in Böblingen und Umgebung.",
+    title: "Thomas Frenzel · Montage & Handwerk in Böblingen",
+    description:
+      "Montage, Innenausbau und Reparaturarbeiten in Böblingen und Umgebung.",
     images: ["/og-tfm.jpg"],
+    creator: "@tf_montage",
   },
   other: {
     "geo.region": "DE-BW",

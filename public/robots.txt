@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: www.tf-m.de
+Sitemap: https://www.tf-m.de/sitemap.xml

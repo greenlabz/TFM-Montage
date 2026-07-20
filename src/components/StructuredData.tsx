@@ -44,6 +44,8 @@ export default function StructuredData({ faq, breadcrumb, localBusiness, person 
       "email": localBusiness.email,
       "image": "https://www.tf-m.de/og-tfm.jpg",
       "logo": "https://www.tf-m.de/Tom%20Logo.png",
+      "url": "https://www.tf-m.de",
+      "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": localBusiness.streetAddress,
@@ -52,15 +54,65 @@ export default function StructuredData({ faq, breadcrumb, localBusiness, person 
         "addressRegion": localBusiness.addressRegion,
         "addressCountry": localBusiness.addressCountry
       },
-      "areaServed": ["Böblingen", "Sindelfingen", "Herrenberg", "Leonberg", "Schönaich"],
-      "url": "https://www.tf-m.de",
+      "areaServed": ["Böblingen", "Sindelfingen", "Herrenberg", "Leonberg", "Schönaich", "Kreis Böblingen"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": localBusiness.telephone,
+        "contactType": "customer service",
+        "email": localBusiness.email,
+        "availableLanguage": ["German"]
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Thomas Frenzel",
+        "jobTitle": "Holzmechaniker und Montage-Handwerker"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Montage- und Holzarbeiten",
-        "itemListElement": ["Möbelmontage", "Innenausbau", "Holzreparaturen", "Holzterrassen", "Holzkonstruktionen"].map((name) => ({
-          "@type": "Offer",
-          "itemOffered": { "@type": "Service", name }
-        }))
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Möbelmontage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Innenausbau" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Holzreparaturen" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Holzterrassen" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Holzkonstruktionen" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tür- und Geländermontage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Akustikpaneele" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Carports" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Zäune" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachstuhl" } }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    });
+  }
+
+  if (person) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.tf-m.de/#thomas-frenzel",
+      "name": person.name,
+      "jobTitle": person.jobTitle,
+      "url": "https://www.tf-m.de/#about",
+      "worksFor": { "@id": "https://www.tf-m.de/#business" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Böblingen",
+        "addressRegion": "Baden-Württemberg",
+        "addressCountry": "DE"
       }
     });
   }
@@ -90,18 +142,6 @@ export default function StructuredData({ faq, breadcrumb, localBusiness, person 
         "name": item.name,
         "item": item.url
       }))
-    });
-  }
-
-  if (person) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://www.tf-m.de/#thomas-frenzel",
-      "name": person.name,
-      "jobTitle": person.jobTitle,
-      "url": "https://www.tf-m.de/#about",
-      "worksFor": { "@id": "https://www.tf-m.de/#business" }
     });
   }
 

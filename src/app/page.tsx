@@ -581,6 +581,24 @@ export default function Home() {
           { question: 'Was passiert, wenn mir die Planung nicht zusagt?', answer: 'Die Beratung und Planung sind unverbindlich. Erst wenn alles passt, geht’s in die Umsetzung.' },
           { question: 'Übernimmst du auch die Entsorgung von Altmaterial?', answer: 'Ja, auf Wunsch übernehme ich auch die fachgerechte Entsorgung von Altmaterial.' }
         ]}
+        breadcrumb={[
+          { name: 'Start', url: 'https://www.tf-m.de/' }
+        ]}
+        localBusiness={{
+          name: 'Thomas Frenzel · Montage & Handwerk',
+          description: 'Handwerker für Montage, Innenausbau und Holzarbeiten im Kreis Böblingen — persönlich, fachlich, regional.',
+          telephone: '+49 170 9980942',
+          email: 'info@tf-m.de',
+          streetAddress: 'Hanns-Weisel-Platz 9',
+          postalCode: '40599',
+          addressLocality: 'Düsseldorf',
+          addressRegion: 'Nordrhein-Westfalen',
+          addressCountry: 'DE'
+        }}
+        person={{
+          name: 'Thomas Frenzel',
+          jobTitle: 'Holzmechaniker und Montage-Handwerker'
+        }}
       />
       
       {!isMenuOpen && <StickyContact revealed={isHeroRevealed} onEmailClick={openContact} />}
@@ -1064,7 +1082,7 @@ export default function Home() {
                 <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-4 md:mt-6 shrink-0">
-                <Image src="/Waschkuche.jpg" alt="Fertig gefölerte Arbeitsplatte" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <Image src="/Waschkuche.jpg" alt="Folierte Arbeitsplatte, sauber verlegt" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-0 shrink-0 cursor-pointer" onClick={(e) => { const v = (e.currentTarget as HTMLDivElement).querySelector('video'); if (v && v.paused) v.play().catch(() => {}); }}>
                 <video src="/Verschonern3-silent.mp4" poster="/Verschonern3.jpg" aria-label="Video einer ausgeführten Innenraumarbeit" className="w-full h-full object-cover" controls preload="none" muted loop playsInline />
