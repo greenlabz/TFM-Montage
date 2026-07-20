@@ -1,12 +1,26 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-const _resendPromise: Promise<import('resend').Resend> | null = null;
+function buildTransporter() {
+  const host = process.env.SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT || '587');
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
 
-function getResendClient() {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error('Missing API key');
-  return Promise.resolve(new Resend(key));
+  if (!host || !user || !pass) {
+    throw new Error('Missing SMTP configuration');
+  }
+
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass }
+  });
+}
+
+async function sendMail(transporter: nodemailer.Transporter, options: nodemailer.SendMailOptions) {
+  return transporter.sendMail(options);
 }
 
 export const runtime = 'nodejs';
@@ -22,21 +36,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Alle Felder sind erforderlich.' }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO_EMAIL) {
-      console.error('Missing RESEND_API_KEY or CONTACT_TO_EMAIL');
+    const recipient = process.env.CONTACT_TO_EMAIL;
+    if (!recipient) {
+      console.error('Missing CONTACT_TO_EMAIL');
       return NextResponse.json({ error: 'E-Mail-Service nicht konfiguriert.' }, { status: 500 });
     }
 
-    const resend = await getResendClient();
-    const sender = process.env.RESEND_FROM || 'TFM Montage <kontakt@tf-m.de>';
-    const recipient = process.env.CONTACT_TO_EMAIL;
+    const transporter = buildTransporter();
+    const sender = process.env.SMTP_FROM || process.env.SMTP_USER || 'kontakt@tf-m.de';
 
     await Promise.all([
-      resend.emails.send({
+      sendMail(transporter, {
         from: sender,
         to: [recipient],
         replyTo: email,
         subject: `Neue Anfrage von ${name}`,
+        text: `Neue Kontaktanfrage\n\nName: ${name}\nE-Mail: ${email}\nNachricht:\n${message}`,
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
             <h2 style="margin-top: 0; color: #86aaa6;">Neue Kontaktanfrage</h2>
@@ -47,11 +62,12 @@ export async function POST(request: Request) {
           </div>
         `
       }),
-      resend.emails.send({
+      sendMail(transporter, {
         from: sender,
         to: [email],
         replyTo: recipient,
         subject: 'Danke für deine Anfrage – TFM Montage',
+        text: `Hallo ${name},\nich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.\n\nBis bald,\nThomas Frenzel\nTFM Montage & Handwerk, Böblingen`,
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
             <h2 style="margin-top: 0; color: #86aaa6;">Danke für deine Anfrage</h2>
@@ -67,7 +83,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('send-confirmation error', error);
     const message = error instanceof Error ? error.message : 'E-Mail konnte nicht gesendet werden.';
-    return NextResponse.json({ error: message.includes('Missing API key') ? 'E-Mail-Service nicht konfiguriert.' : 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
+    return NextResponse.json({ error: message.includes('Missing SMTP configuration') ? 'E-Mail-Service nicht konfiguriert.' : 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
   }
 }
 
