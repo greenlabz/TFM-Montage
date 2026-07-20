@@ -63,14 +63,14 @@ const projects = [
     aspect: 'aspect-[4/5]'
   },
   {
-    id: 'boden-leisten',
-    image: '/projekt-boden-leisten.webp',
-    title: 'Boden & Leisten',
-    category: 'Bodenarbeiten',
-    detail: 'Ruhiges Verlegebild und sauber geführte Sockelleisten bis in die Türanschlüsse.',
-    layout: 'md:col-span-8 md:mt-12',
+    id: 'kellerausbau',
+    image: '/projekt-keller.png',
+    title: 'Kellerausbau mit klarer Raumaufteilung',
+    category: 'Innenausbau',
+    detail: 'Passgenaue Holzabtrennungen nutzen den vorhandenen Raum sinnvoll aus.',
+    layout: 'md:col-span-7',
     aspect: 'aspect-[16/10]'
-  }
+  },
 ] as const;
 
 type Project = (typeof projects)[number];

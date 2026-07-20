@@ -1061,7 +1061,7 @@ export default function Home() {
                 <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-4 md:mt-6 shrink-0">
-                <Image src="/Verschonern2.jpg" alt="Detail einer handwerklichen Innenraumverbesserung" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <Image src="/Waschkuche.jpg" alt="Fertig gefölerte Arbeitsplatte" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-0 shrink-0 cursor-pointer" onClick={(e) => { const v = (e.currentTarget as HTMLDivElement).querySelector('video'); if (v && v.paused) v.play().catch(() => {}); }}>
                 <video src="/Verschonern3-silent.mp4" poster="/Verschonern3.jpg" aria-label="Video einer ausgeführten Innenraumarbeit" className="w-full h-full object-cover" controls preload="none" muted loop playsInline />
