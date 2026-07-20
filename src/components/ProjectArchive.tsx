@@ -202,7 +202,7 @@ export default function ProjectArchive() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className={`object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025] ${project.id === 'boden-leisten' ? 'object-[center_68%]' : ''}`}
+                      className={`object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]`}
                       sizes="(max-width: 767px) 100vw, 66vw"
                     />
                     <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-[#181818]/75 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
