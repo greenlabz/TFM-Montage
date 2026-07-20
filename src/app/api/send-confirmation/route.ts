@@ -19,10 +19,6 @@ function buildTransporter() {
   });
 }
 
-async function sendMail(transporter: nodemailer.Transporter, options: nodemailer.SendMailOptions) {
-  return transporter.sendMail(options);
-}
-
 export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
@@ -38,52 +34,77 @@ export async function POST(request: Request) {
 
     const recipient = process.env.CONTACT_TO_EMAIL;
     if (!recipient) {
-      console.error('Missing CONTACT_TO_EMAIL');
       return NextResponse.json({ error: 'E-Mail-Service nicht konfiguriert.' }, { status: 500 });
     }
 
-    const transporter = buildTransporter();
+    let transporter;
+    try {
+      transporter = buildTransporter();
+      await transporter.verify();
+    } catch (verifyError) {
+      console.error('SMTP verify failed', verifyError);
+      const smtpError = verifyError instanceof Error ? verifyError.message : '';
+      if (/auth/i.test(smtpError)) {
+        return NextResponse.json({ error: 'SMTP-Anmeldung fehlgeschlagen. Bitte prüfe SMTP_USER und SMTP_PASS.' }, { status: 500 });
+      }
+      if (/ECONNREFUSED|ETIMEDOUT|getaddrinfo ENOTFOUND|self signed certificate|selfsigned/i.test(smtpError)) {
+        return NextResponse.json({ error: 'Verbindung zum Mailserver fehlgeschlagen. Bitte prüfe SMTP_HOST und SMTP_PORT.' }, { status: 500 });
+      }
+      return NextResponse.json({ error: 'E-Mail-Service nicht erreichbar.' }, { status: 500 });
+    }
+
     const sender = process.env.SMTP_FROM || process.env.SMTP_USER || 'kontakt@tf-m.de';
 
-    await Promise.all([
-      sendMail(transporter, {
-        from: sender,
-        to: [recipient],
-        replyTo: email,
-        subject: `Neue Anfrage von ${name}`,
-        text: `Neue Kontaktanfrage\n\nName: ${name}\nE-Mail: ${email}\nNachricht:\n${message}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
-            <h2 style="margin-top: 0; color: #86aaa6;">Neue Kontaktanfrage</h2>
-            <p><strong style="color: #fff;">Name:</strong> <span style="color: #cfcfc7;">${escapeHtml(name)}</span></p>
-            <p><strong style="color: #fff;">E-Mail:</strong> <a href="mailto:${escapeHtml(email)}" style="color: #86aaa6;">${escapeHtml(email)}</a></p>
-            <p><strong style="color: #fff;">Nachricht:</strong></p>
-            <div style="background: #2a2a2a; padding: 14px; border-radius: 8px; color: #cfcfc7; white-space: pre-wrap;">${escapeHtml(message)}</div>
-          </div>
-        `
-      }),
-      sendMail(transporter, {
-        from: sender,
-        to: [email],
-        replyTo: recipient,
-        subject: 'Danke für deine Anfrage – TFM Montage',
-        text: `Hallo ${name},\nich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.\n\nBis bald,\nThomas Frenzel\nTFM Montage & Handwerk, Böblingen`,
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
-            <h2 style="margin-top: 0; color: #86aaa6;">Danke für deine Anfrage</h2>
-            <p>Hallo ${escapeHtml(name)},</p>
-            <p>ich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.</p>
-            <p style="margin-top: 16px;">Bis bald,<br/>Thomas Frenzel<br/>TFM Montage & Handwerk, Böblingen</p>
-          </div>
-        `
-      })
-    ]);
+    try {
+      await Promise.all([
+        transporter.sendMail({
+          from: sender,
+          to: [recipient],
+          replyTo: email,
+          subject: `Neue Anfrage von ${name}`,
+          text: `Neue Kontaktanfrage\n\nName: ${name}\nE-Mail: ${email}\nNachricht:\n${message}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
+              <h2 style="margin-top: 0; color: #86aaa6;">Neue Kontaktanfrage</h2>
+              <p><strong style="color: #fff;">Name:</strong> <span style="color: #cfcfc7;">${escapeHtml(name)}</span></p>
+              <p><strong style="color: #fff;">E-Mail:</strong> <a href="mailto:${escapeHtml(email)}" style="color: #86aaa6;">${escapeHtml(email)}</a></p>
+              <p><strong style="color: #fff;">Nachricht:</strong></p>
+              <div style="background: #2a2a2a; padding: 14px; border-radius: 8px; color: #cfcfc7; white-space: pre-wrap;">${escapeHtml(message)}</div>
+            </div>
+          `
+        }),
+        transporter.sendMail({
+          from: sender,
+          to: [email],
+          replyTo: recipient,
+          subject: 'Danke für deine Anfrage – TFM Montage',
+          text: `Hallo ${name},\nich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.\n\nBis bald,\nThomas Frenzel\nTFM Montage & Handwerk, Böblingen`,
+          html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #212121; padding: 24px; border-radius: 12px;">
+              <h2 style="margin-top: 0; color: #86aaa6;">Danke für deine Anfrage</h2>
+              <p>Hallo ${escapeHtml(name)},</p>
+              <p>ich habe deine Nachricht erhalten und melde mich schnellstmöglich bei dir.</p>
+              <p style="margin-top: 16px;">Bis bald,<br/>Thomas Frenzel<br/>TFM Montage & Handwerk, Böblingen</p>
+            </div>
+          `
+        })
+      ]);
 
-    return NextResponse.json({ ok: true });
+      return NextResponse.json({ ok: true });
+    } catch (sendError) {
+      console.error('send-confirmation send error', sendError);
+      const sendMessage = sendError instanceof Error ? sendError.message : '';
+      if (/auth/i.test(sendMessage)) {
+        return NextResponse.json({ error: 'SMTP-Anmeldung fehlgeschlagen. Bitte prüfe SMTP_USER und SMTP_PASS.' }, { status: 500 });
+      }
+      if (/ECONNREFUSED|ETIMEDOUT|getaddrinfo ENOTFOUND|self signed certificate|selfsigned/i.test(sendMessage)) {
+        return NextResponse.json({ error: 'Verbindung zum Mailserver fehlgeschlagen. Bitte prüfe SMTP_HOST und SMTP_PORT.' }, { status: 500 });
+      }
+      return NextResponse.json({ error: 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
+    }
   } catch (error) {
-    console.error('send-confirmation error', error);
-    const message = error instanceof Error ? error.message : 'E-Mail konnte nicht gesendet werden.';
-    return NextResponse.json({ error: message.includes('Missing SMTP configuration') ? 'E-Mail-Service nicht konfiguriert.' : 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
+    console.error('send-confirmation unexpected error', error);
+    return NextResponse.json({ error: 'E-Mail konnte nicht gesendet werden.' }, { status: 500 });
   }
 }
 
