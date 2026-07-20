@@ -1,0 +1,207 @@
+[     670ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[     842ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[    2438ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[    2562ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[    2582ms] [LOG] [Fast Refresh] done in 121ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   57367ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   57414ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   57626ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   57694ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   59018ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[   99692ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  100033ms] [LOG] [Fast Refresh] done in 305ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  126791ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  127056ms] [LOG] [Fast Refresh] done in 273ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  127252ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  127260ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  133399ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  133520ms] [LOG] [Fast Refresh] done in 223ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  133648ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  133697ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  133967ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148569ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148623ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  148870ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  190771ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  190816ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  191049ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  215513ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  215542ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  237528ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  237550ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  237609ms] [WARNING] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  237825ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+                        <Home params={Promise} searchParams={Promise}>
+                          <div className="min-h-scre...">
+                            <StructuredData>
+                            <StickyContact>
+                            <MeasurementLine reduceMotion={true}>
+                              <div aria-hidden="true" className="pointer-ev...">
+                                <span>
+                                <motion.span style={{scaleY:1, ...}} className="absolute b...">
+                                  <span
+                                    className="absolute bottom-0 left-0 top-0 w-px bg-[#3f6f6b] shadow-[0_0_12px_rgba(..."
++                                   style={{transformOrigin:"top",transform:"none"}}
+-                                   style={{transform-origin:"center top",transform:"scaleY(0)"}}
+                                    ref={function useMotionRef.useCallback}
+                                  >
+                                <MeasurementTick progress={{...}} threshold={0.2} top={16} reduceMotion={true}>
+                                  <motion.span style={{top:"16%", ...}} className="absolute l...">
+                                    <span
+                                      className="absolute left-0 h-px w-3 bg-[#3f6f6b]"
+                                      style={{
++                                       top: "16%"
+-                                       top: "16%"
++                                       opacity: 1
+-                                       opacity: "0.22"
++                                       transformOrigin: "left"
++                                       transform: "none"
+-                                       transform: "scaleX(0.45)"
+-                                       transform-origin: "left center"
+                                      }}
+                                      ref={function useMotionRef.useCallback}
+                                    >
+                                <MeasurementTick progress={{...}} threshold={0.4} top={37} reduceMotion={true}>
+                                  <motion.span style={{top:"37%", ...}} className="absolute l...">
+                                    <span
+                                      className="absolute left-0 h-px w-3 bg-[#3f6f6b]"
+                                      style={{
++                                       top: "37%"
+-                                       top: "37%"
++                                       opacity: 1
+-                                       opacity: "0.22"
++                                       transformOrigin: "left"
++                                       transform: "none"
+-                                       transform: "scaleX(0.45)"
+-                                       transform-origin: "left center"
+                                      }}
+                                      ref={function useMotionRef.useCallback}
+                                    >
+                                <MeasurementTick progress={{...}} threshold={0.6000000000000001} top={61} ...>
+                                  <motion.span style={{top:"61%", ...}} className="absolute l...">
+                                    <span
+                                      className="absolute left-0 h-px w-3 bg-[#3f6f6b]"
+                                      style={{
++                                       top: "61%"
+-                                       top: "61%"
++                                       opacity: 1
+-                                       opacity: "0.22"
++                                       transformOrigin: "left"
++                                       transform: "none"
+-                                       transform: "scaleX(0.45)"
+-                                       transform-origin: "left center"
+                                      }}
+                                      ref={function useMotionRef.useCallback}
+                                    >
+                                <MeasurementTick progress={{...}} threshold={0.8} top={84} reduceMotion={true}>
+                                  <motion.span style={{top:"84%", ...}} className="absolute l...">
+                                    <span
+                                      className="absolute left-0 h-px w-3 bg-[#3f6f6b]"
+                                      style={{
++                                       top: "84%"
+-                                       top: "84%"
++                                       opacity: 1
+-                                       opacity: "0.22"
++                                       transformOrigin: "left"
++                                       transform: "none"
+-                                       transform: "scaleX(0.45)"
+-                                       transform-origin: "left center"
+                                      }}
+                                      ref={function useMotionRef.useCallback}
+                                    >
+                                ...
+                            <AnimatePresence>
+                            <motion.nav>
+                            <section>
+                            <section>
+                            <section>
+                            <ServiceStack onContact={function openContact} reduceMotion={true}>
+                              <section
+                                id="services"
++                               className="bg-[#f0f0f0] py-24 md:py-32"
+-                               className="relative bg-[#f0f0f0] md:h-[520vh]"
+                              >
+                                <div
++                                 className="mx-auto max-w-7xl px-6 md:px-16"
+-                                 className="mx-auto px-6 py-24 md:hidden"
+                                >
+                                  <span>
+                                  <h2
++                                   className="mt-4 font-display text-5xl font-bold text-[#212121] md:text-7xl"
+-                                   className="mt-4 font-display text-5xl font-bold text-[#212121]"
+                                  >
++                                   Leistungen.
+                                  <div
++                                   className="mt-16 grid gap-5 md:grid-cols-2"
+-                                   className="mt-14 space-y-5"
+                                  >
+                                  <button
+                                    type="button"
+                                    onClick={function openContact}
++                                   className="conversion-cta mx-auto mt-14 flex rounded-full px-12 py-5 font-display ..."
+-                                   className="conversion-cta mx-auto mt-12 flex rounded-full px-10 py-5 font-display ..."
+                                  >
++                                   Projekt anfragen
+-                               <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
+                            ...
+                    ...
+                  ...
+      ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at popHydrationState (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3403:13)
+    at completeWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6922:25)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at completeUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+[  237862ms] Error: Target ref is defined but not hydrated. For more information and steps for solving, visit https://motion.dev/troubleshooting/use-scroll-ref
+    at invariant (http://localhost:3000/_next/static/chunks/node_modules_1fgskq2._.js:1093:19)
+    at useScroll.useEffect.tryStart (http://localhost:3000/_next/static/chunks/node_modules_1fgskq2._.js:15411:194)
+    at triggerCallback (http://localhost:3000/_next/static/chunks/node_modules_1fgskq2._.js:1431:9)
+    at Set.forEach (<anonymous>)
+    at Object.process (http://localhost:3000/_next/static/chunks/node_modules_1fgskq2._.js:1467:23)
+    at processBatch (http://localhost:3000/_next/static/chunks/node_modules_1fgskq2._.js:1521:14)
+[  237952ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[  238033ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  238037ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  238950ms] [WARNING] Image with src "/Tom Logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  266500ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  266726ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  266946ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  266989ms] [LOG] [Fast Refresh] done in 153ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  267121ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  267125ms] [LOG] [Fast Refresh] done in 106ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

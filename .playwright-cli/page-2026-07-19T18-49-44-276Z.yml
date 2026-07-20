@@ -1,0 +1,344 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Projektfoto per WhatsApp senden" [ref=e4] [cursor=pointer]:
+      - /url: https://wa.me/491700980942
+    - link "E-Mail an Thomas Frenzel senden" [ref=e8] [cursor=pointer]:
+      - /url: mailto:info@tf-m.de
+  - img "Tom Logo" [ref=e15]
+  - navigation "Hauptnavigation":
+    - generic [ref=e16]:
+      - img "Tom Logo" [ref=e18]
+      - generic [ref=e19]:
+        - link "Über Mich" [ref=e20] [cursor=pointer]:
+          - /url: "#about"
+        - link "Leistungen" [ref=e21] [cursor=pointer]:
+          - /url: "#services"
+        - link "Galerie" [ref=e22] [cursor=pointer]:
+          - /url: "#project-archive"
+        - link "Ratgeber" [ref=e23] [cursor=pointer]:
+          - /url: /ratgeber
+        - button "Kontakt" [ref=e24]
+  - generic [ref=e25]:
+    - img "Background Tools" [ref=e27]
+    - generic [ref=e29]:
+      - generic [ref=e30]: Thomas Frenzel · Kreis Böblingen
+      - heading "Zuverlässige Montage-Handwerksleistung gefällig?" [level=1] [ref=e31]: ZuverlässigeMontage-Handwerksleistung gefällig?
+      - paragraph [ref=e32]: Zuverlässige Montage und Handwerksleistung – persönlich, fachlich, regional. Mit dem Auge für das Detail und der Präzision eines Künstlers.
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - link "Projektfoto per WhatsApp senden" [ref=e36] [cursor=pointer]:
+            - /url: https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken.
+          - paragraph [ref=e39]: Einfach klicken und per WhatsApp schicken.
+        - link "Meine Arbeiten" [ref=e40] [cursor=pointer]:
+          - /url: "#gallery"
+  - generic [ref=e48]:
+    - generic [ref=e49]:
+      - generic [ref=e50]: Google Bewertungen
+      - generic [ref=e51]: ★★★★★
+    - generic [ref=e52]:
+      - generic [ref=e53]: Jahre Erfahrung
+      - generic [ref=e54]: "23"
+    - generic [ref=e55]:
+      - generic [ref=e56]: Anzahl Projekte
+      - generic [ref=e57]: 200+
+  - generic [ref=e60]:
+    - img "Thomas Frenzel" [ref=e62]
+    - generic [ref=e63]:
+      - generic [ref=e64]: Der Mensch dahinter
+      - heading "Thomas Frenzel." [level=2] [ref=e65]
+      - paragraph [ref=e67]: Mein Name ist Thomas Frenzel und ich bin in Böblingen beheimatet. Meine Ausbildung zum Holzmechaniker habe ich im Jahr 2003 bei der Renz GmbH erfolgreich abgeschlossen. Im Jahr 2022 habe ich mich dazu entschieden, mich im Bereich Montage- und Handwerksarbeiten selbstständig zu machen.
+      - paragraph [ref=e68]: Mir ist wichtig, dass meine Arbeiten zuverlässig, sauber und ordentlich ausgeführt werden. Ich unterstütze meine Kunden bei Möbelmontage, Bodenverlegung, Türmontage, Innenausbau sowie kleineren Reparaturarbeiten.
+      - paragraph [ref=e69]: Als regionaler Handwerker bin ich hauptsächlich im Kreis Böblingen und Umgebung tätig. Der persönliche Kontakt zu meinen Kunden und eine faire Zusammenarbeit stehen für mich dabei im Mittelpunkt.
+  - generic [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - text: Angebot
+        - heading "Leistungen." [level=2] [ref=e74]
+      - paragraph [ref=e75]: Fünf Bereiche. Eine saubere Ausführung. Scrolle durch den Stapel.
+    - generic [ref=e76]:
+      - generic:
+        - article:
+          - generic:
+            - generic: Leistungsbereich
+            - generic:
+              - heading "Montage & Innenausbau" [level=3]
+              - paragraph: Möbelmontage, Zimmertüren, Türrahmen, Laminat- und Vinylböden, Sockelleisten, Paneele, Wandverkleidungen und individuelle Stauraumlösungen.
+      - generic:
+        - article:
+          - generic:
+            - generic: Leistungsbereich
+            - generic:
+              - heading "Reparaturen & Instandhaltung" [level=3]
+              - paragraph: Möbel, Scharniere, Beschläge, Türen und Holzbauteile werden sauber instand gesetzt und für den weiteren Einsatz vorbereitet.
+      - generic:
+        - article:
+          - generic:
+            - generic: Leistungsbereich
+            - generic:
+              - heading "Individuelle kleine Holzarbeiten" [level=3]
+              - paragraph: Passgenaue Lösungen für Nischen, Übergänge und Details, bei denen Standardmaße nicht weiterhelfen.
+      - generic:
+        - article:
+          - generic:
+            - generic: Leistungsbereich
+            - generic:
+              - heading "Modernisierung" [level=3]
+              - paragraph: Sicht- und Trennelemente, Stauraumlösungen sowie Anpassungen bei Umzug oder Renovierung.
+      - generic:
+        - article:
+          - generic:
+            - generic: Leistungsbereich
+            - generic:
+              - heading "Service & Kundenbetreuung" [level=3]
+              - paragraph: Persönliche Beratung, klare Planung, nachvollziehbare Angebote und eine saubere gemeinsame Abnahme.
+    - button [disabled] [ref=e78] [cursor=pointer]: Projekt anfragen
+  - generic [ref=e81]:
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]: Ablauf
+        - heading "Mein Prozess." [level=2] [ref=e85]
+      - paragraph [ref=e86]: Vier klare Schritte statt Baustellenchaos. Du weißt jederzeit, was als Nächstes passiert.
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e91]: "01"
+        - article [ref=e93]:
+          - generic [ref=e94]: Schritt 01
+          - heading "Foto senden" [level=3] [ref=e95]
+          - paragraph [ref=e96]: Ein Bild und ein kurzer Satz genügen für den Anfang.
+      - generic [ref=e97]:
+        - generic [ref=e98]: "02"
+        - article [ref=e100]:
+          - generic [ref=e101]: Schritt 02
+          - heading "Umfang klären" [level=3] [ref=e102]
+          - paragraph [ref=e103]: Ich prüfe Aufgabe, Ort und sinnvolle nächste Schritte.
+      - generic [ref=e104]:
+        - generic [ref=e105]: "03"
+        - article [ref=e107]:
+          - generic [ref=e108]: Schritt 03
+          - heading "Angebot erhalten" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Leistung und Kosten werden vor dem Start nachvollziehbar festgehalten.
+      - generic [ref=e111]:
+        - generic [ref=e112]: "04"
+        - article [ref=e114]:
+          - generic [ref=e115]: Schritt 04
+          - heading "Sauber abnehmen" [level=3] [ref=e116]
+          - paragraph [ref=e117]: Nach der Montage wird das Ergebnis gemeinsam geprüft.
+  - generic [ref=e120]:
+    - generic [ref=e122]:
+      - generic [ref=e123]: Detailarbeit
+      - generic [ref=e124]:
+        - heading "Die Wirkung liegt im Detail." [level=2] [ref=e125]
+        - paragraph [ref=e127]: Kleine Veränderungen, klare Linien und handwerkliche Lösungen, die einen Raum dauerhaft besser machen.
+    - generic [ref=e128]:
+      - img "Keller Leonberg" [ref=e130]
+      - img "Holzständerwerk in einem ausgebauten Keller" [ref=e132]
+      - img "Keller" [ref=e134]
+  - generic [ref=e137]:
+    - generic [ref=e139]:
+      - generic [ref=e140]: Raumwirkung
+      - generic [ref=e141]:
+        - heading "Veränderung darf leise sein." [level=2] [ref=e142]: Veränderungdarf leise sein.
+        - paragraph [ref=e144]: Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.
+    - generic [ref=e145]:
+      - img "Verschönerung 1" [ref=e147]
+      - img "Verschönerung 2" [ref=e149]
+  - generic [ref=e152]:
+    - generic [ref=e153]:
+      - generic [ref=e154]: Treppen & Geländer
+      - generic [ref=e155]:
+        - heading "Übergänge, die alles zusammenhalten." [level=2] [ref=e156]
+        - paragraph [ref=e158]: Saubere Anschlüsse und klare Linien geben Treppenhäusern Halt, Sicherheit und ein ruhiges Gesamtbild.
+    - generic [ref=e159]:
+      - img "Treppenhaus 1" [ref=e161]
+      - img "Treppenhaus 2" [ref=e163]
+      - img "Treppenhaus 3" [ref=e165]
+  - generic [ref=e168]:
+    - generic [ref=e170]:
+      - generic [ref=e171]: Akustikpaneele
+      - generic [ref=e172]:
+        - heading "Ruhe bekommt eine klare Linie." [level=2] [ref=e173]
+        - paragraph [ref=e175]: Präzise gesetzte Paneele ordnen die Wand, dämpfen den Raum und wirken wie ein Teil der Architektur.
+    - generic [ref=e176]:
+      - img "Akustik Panele 1" [ref=e178]
+      - img "Akustik Panele 2" [ref=e180]
+      - img "Akustik Panele 3" [ref=e182]
+  - generic [ref=e184]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - text: Projektarchiv
+        - heading "Arbeiten, die man nicht erklären muss." [level=2] [ref=e187]
+      - paragraph [ref=e188]: Montage, Innenausbau und Reparaturen. Im Ganzen betrachtet. Im Detail geprüft.
+    - generic [ref=e196]:
+      - button "Küche sauber eingepasst öffnen" [ref=e197] [cursor=pointer]:
+        - img "Küche sauber eingepasst" [ref=e199]
+        - generic [ref=e204]:
+          - generic [ref=e205]: "01"
+          - generic [ref=e206]:
+            - text: Küchenmontage
+            - heading "Küche sauber eingepasst" [level=3] [ref=e207]
+      - button "Möbel präzise montiert öffnen" [ref=e208] [cursor=pointer]:
+        - img "Möbel präzise montiert" [ref=e210]
+        - generic [ref=e215]:
+          - generic [ref=e216]: "02"
+          - generic [ref=e217]:
+            - text: Möbelmontage
+            - heading "Möbel präzise montiert" [level=3] [ref=e218]
+      - button "Paneele als klare Raumkante öffnen" [ref=e219] [cursor=pointer]:
+        - img "Paneele als klare Raumkante" [ref=e221]
+        - generic [ref=e226]:
+          - generic [ref=e227]: "03"
+          - generic [ref=e228]:
+            - text: Akustikpaneele
+            - heading "Paneele als klare Raumkante" [level=3] [ref=e229]
+      - button "Boden passgenau verlegt öffnen" [ref=e230] [cursor=pointer]:
+        - img "Boden passgenau verlegt" [ref=e232]
+        - generic [ref=e237]:
+          - generic [ref=e238]: "04"
+          - generic [ref=e239]:
+            - text: Bodenarbeiten
+            - heading "Boden passgenau verlegt" [level=3] [ref=e240]
+      - button "Kellerausbau in Leonberg öffnen" [ref=e241] [cursor=pointer]:
+        - img "Kellerausbau in Leonberg" [ref=e243]
+        - generic [ref=e248]:
+          - generic [ref=e249]: "05"
+          - generic [ref=e250]:
+            - text: Innenausbau
+            - heading "Kellerausbau in Leonberg" [level=3] [ref=e251]
+      - button "Geländer klar geführt öffnen" [ref=e252] [cursor=pointer]:
+        - img "Geländer klar geführt" [ref=e254]
+        - generic [ref=e259]:
+          - generic [ref=e260]: "06"
+          - generic [ref=e261]:
+            - text: Treppen & Geländer
+            - heading "Geländer klar geführt" [level=3] [ref=e262]
+      - button "Treppenbau aus Holz und Stahl öffnen" [ref=e263] [cursor=pointer]:
+        - img "Treppenbau aus Holz und Stahl" [ref=e265]
+        - generic [ref=e270]:
+          - generic [ref=e271]: "07"
+          - generic [ref=e272]:
+            - text: Treppenbau
+            - heading "Treppenbau aus Holz und Stahl" [level=3] [ref=e273]
+      - button "Kelleraufteilung im Aufbau öffnen" [ref=e274] [cursor=pointer]:
+        - img "Kelleraufteilung im Aufbau" [ref=e276]
+        - generic [ref=e281]:
+          - generic [ref=e282]: "08"
+          - generic [ref=e283]:
+            - text: Innenausbau
+            - heading "Kelleraufteilung im Aufbau" [level=3] [ref=e284]
+    - generic [ref=e285]:
+      - paragraph [ref=e286]: Ein Foto reicht für den ersten Schritt. Thomas prüft, was möglich und sinnvoll ist.
+      - link "Projektfoto senden" [ref=e287] [cursor=pointer]:
+        - /url: https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken.
+  - generic [ref=e289]:
+    - generic [ref=e290]:
+      - generic [ref=e291]: Kundenstimmen
+      - heading "Zufriedene Kunden." [level=2] [ref=e292]
+    - generic [ref=e293]:
+      - generic [ref=e294]:
+        - paragraph [ref=e295]: "“Top Qualität und pünktlich: Herr Frenzel hat unsere Küche montiert – saubere Arbeit und sehr freundlich.”"
+        - generic [ref=e296]:
+          - generic [ref=e297]: MW
+          - generic [ref=e298]:
+            - paragraph [ref=e299]: Michael Weber
+            - paragraph [ref=e300]: Böblingen
+      - generic [ref=e301]:
+        - paragraph [ref=e302]: “Sehr zuverlässig und engagiert. Der Kellerumbau wurde termingerecht und in bester Qualität abgeschlossen.”
+        - generic [ref=e303]:
+          - generic [ref=e304]: SK
+          - generic [ref=e305]:
+            - paragraph [ref=e306]: Sabine Klein
+            - paragraph [ref=e307]: Leonberg
+      - generic [ref=e308]:
+        - paragraph [ref=e309]: “Kurze Wege, klare Kommunikation, saubere Ausführung. Ich bin sehr zufrieden mit der Montage.”
+        - generic [ref=e310]:
+          - generic [ref=e311]: TB
+          - generic [ref=e312]:
+            - paragraph [ref=e313]: Thomas Berger
+            - paragraph [ref=e314]: Sindelfingen
+  - generic [ref=e317]:
+    - generic [ref=e318]: FAQ / Einwände
+    - heading "Häufige Fragen." [level=2] [ref=e319]
+    - generic [ref=e320]:
+      - button "Welche Materialien verwendest du? +" [ref=e321]:
+        - generic [ref=e322]:
+          - heading "Welche Materialien verwendest du?" [level=3] [ref=e323]
+          - generic [ref=e324]: +
+      - button "Muss ich selbst Material besorgen? +" [ref=e325]:
+        - generic [ref=e326]:
+          - heading "Muss ich selbst Material besorgen?" [level=3] [ref=e327]
+          - generic [ref=e328]: +
+      - button "Bietest du auch kurzfristige Termine an? +" [ref=e329]:
+        - generic [ref=e330]:
+          - heading "Bietest du auch kurzfristige Termine an?" [level=3] [ref=e331]
+          - generic [ref=e332]: +
+      - button "Was passiert, wenn mir die Planung nicht zusagt? +" [ref=e333]:
+        - generic [ref=e334]:
+          - heading "Was passiert, wenn mir die Planung nicht zusagt?" [level=3] [ref=e335]
+          - generic [ref=e336]: +
+      - button "Übernimmst du auch die Entsorgung von Altmaterial? +" [ref=e337]:
+        - generic [ref=e338]:
+          - heading "Übernimmst du auch die Entsorgung von Altmaterial?" [level=3] [ref=e339]
+          - generic [ref=e340]: +
+  - generic [ref=e343]:
+    - generic [ref=e344]:
+      - generic [ref=e345]:
+        - generic [ref=e346]: Gratis Download
+        - heading "Meine persönliche Holzpflegeanleitung" [level=2] [ref=e347]
+        - paragraph [ref=e348]: Die wichtigsten Tipps zur richtigen Pflege von Holzoberflächen im Haushalt – kurz, praktisch, für jeden anwendbar. Einfach E-Mail eingeben und direkt herunterladen.
+        - list [ref=e349]:
+          - listitem [ref=e350]:
+            - generic [ref=e351]: ✓
+            - text: Pflegeintervalle für verschiedene Holzarten
+          - listitem [ref=e352]:
+            - generic [ref=e353]: ✓
+            - text: Die besten Hausmittel ohne Chemie
+          - listitem [ref=e354]:
+            - generic [ref=e355]: ✓
+            - text: Fehler vermeiden, die Holz dauerhaft schädigen
+      - generic [ref=e357]:
+        - generic [ref=e358]:
+          - generic [ref=e359]: E-Mail-Adresse
+          - textbox "E-Mail-Adresse" [ref=e360]:
+            - /placeholder: name@beispiel.de
+        - button "Jetzt herunterladen" [ref=e361]
+        - paragraph [ref=e362]: Kein Spam. Jederzeit abbestellbar. Nur wertvolle Tipps.
+    - img "Holzpflege" [ref=e364]
+  - generic [ref=e366]:
+    - generic [ref=e367]: Kontakt
+    - heading "Bereit für dein nächstes Projekt?" [level=2] [ref=e368]: Bereit für deinnächstes Projekt?
+    - paragraph [ref=e369]: Egal ob Reparatur, Montage oder individueller Ausbau – lass uns darüber sprechen.
+    - generic [ref=e370]:
+      - button "Nachricht senden" [ref=e371] [cursor=pointer]
+      - link "WhatsApp" [ref=e372] [cursor=pointer]:
+        - /url: https://wa.me/491700980942
+  - contentinfo [ref=e375]:
+    - generic [ref=e376]:
+      - generic [ref=e377]:
+        - heading "Sitemap" [level=3] [ref=e378]
+        - navigation [ref=e379]:
+          - link "Über mich" [ref=e380] [cursor=pointer]:
+            - /url: "#about"
+          - link "Leistungen" [ref=e381] [cursor=pointer]:
+            - /url: "#gallery"
+          - link "Galerie" [ref=e382] [cursor=pointer]:
+            - /url: "#project-archive"
+          - link "Ratgeber" [ref=e383] [cursor=pointer]:
+            - /url: /ratgeber
+          - link "Kontakt" [ref=e384] [cursor=pointer]:
+            - /url: "#contact"
+      - img "Tom Logo" [ref=e386]
+      - generic [ref=e389]:
+        - heading "Rechtliches" [level=3] [ref=e390]
+        - generic [ref=e391]:
+          - link "Impressum" [ref=e392] [cursor=pointer]:
+            - /url: /impressum
+          - link "Datenschutz" [ref=e393] [cursor=pointer]:
+            - /url: /datenschutz
+        - generic [ref=e394]: Instagram
+    - generic [ref=e396]:
+      - paragraph [ref=e397]: © 2026 Thomas Frenzel. Alle Rechte vorbehalten.
+      - paragraph [ref=e398]:
+        - text: "Made in the Lab:"
+        - link "Green Labz Studio" [ref=e399] [cursor=pointer]:
+          - /url: https://www.greenlabz-studio.de/
+        - text: .

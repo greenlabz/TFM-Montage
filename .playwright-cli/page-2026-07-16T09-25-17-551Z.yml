@@ -1,0 +1,174 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e233]: "Holz richtig ölen: dünn auftragen, sauber abnehmen | TFM Ratgeber"
+  - main [ref=e234]:
+    - generic [ref=e236]:
+      - link "TFM Startseite" [ref=e237] [cursor=pointer]:
+        - /url: /
+        - img "Thomas Frenzel Montage und Handwerk" [ref=e238]
+      - navigation "Hauptnavigation" [ref=e239]:
+        - link "Arbeiten" [ref=e240] [cursor=pointer]:
+          - /url: /#gallery
+        - link "Ablauf" [ref=e241] [cursor=pointer]:
+          - /url: /#process
+        - link "Ratgeber" [ref=e242] [cursor=pointer]:
+          - /url: /ratgeber
+      - link "Projektfoto senden" [ref=e243] [cursor=pointer]:
+        - /url: https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Holzprojekt.
+    - article [ref=e244]:
+      - generic [ref=e245]:
+        - link "Alle Ratgeber" [ref=e246] [cursor=pointer]:
+          - /url: /ratgeber
+        - generic [ref=e249]:
+          - generic [ref=e250]: "01"
+          - generic [ref=e251]: Oberfläche
+          - generic [ref=e252]: 7 Min.
+        - 'heading "Holz richtig ölen: dünn auftragen, sauber abnehmen" [level=1] [ref=e256]'
+        - paragraph [ref=e257]: So wird die Oberfläche gleichmäßig, ohne klebrige Stellen oder dunkle Ränder.
+        - generic [ref=e258]:
+          - img "Thomas Frenzel" [ref=e259]
+          - generic [ref=e260]:
+            - strong [ref=e261]: Thomas Frenzel
+            - generic [ref=e262]: Holzmechaniker · geprüft am 16.07.2026
+      - img "Geölte Holzoberfläche mit sichtbarer natürlicher Maserung" [ref=e264]
+      - generic [ref=e265]:
+        - complementary [ref=e266]:
+          - generic [ref=e267]: Inhalt
+          - link "Kurzantwort" [ref=e268] [cursor=pointer]:
+            - /url: "#kurzantwort"
+          - link "Vorbereitung" [ref=e269] [cursor=pointer]:
+            - /url: "#vorbereitung"
+          - link "Schritt für Schritt" [ref=e270] [cursor=pointer]:
+            - /url: "#anleitung"
+          - link "Fehler vermeiden" [ref=e271] [cursor=pointer]:
+            - /url: "#fehler"
+          - link "Häufige Fragen" [ref=e272] [cursor=pointer]:
+            - /url: "#fragen"
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - text: Kurzantwort
+            - paragraph [ref=e275]: Holz wird in Faserrichtung geschliffen, vollständig entstaubt und nur dünn geölt. Nach der Einwirkzeit muss überschüssiges Öl restlos abgenommen werden. Mehrere dünne Aufträge sind sicherer als eine satte Schicht.
+          - generic [ref=e276]:
+            - paragraph [ref=e277]: Vorbereitung
+            - heading "Was du bereitlegst" [level=2] [ref=e278]
+            - list [ref=e279]:
+              - listitem [ref=e280]: passendes Holzöl
+              - listitem [ref=e283]: fusselfreie Baumwolltücher
+              - listitem [ref=e286]: Schleifpapier Körnung 120 bis 180
+              - listitem [ref=e289]: Staubsauger und weiche Bürste
+              - listitem [ref=e292]: Handschuhe
+          - generic [ref=e295]:
+            - paragraph [ref=e296]: Anleitung
+            - heading "Schritt für Schritt" [level=2] [ref=e297]
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - generic [ref=e300]: "01"
+                - generic [ref=e301]:
+                  - heading "Oberfläche bestimmen" [level=3] [ref=e302]
+                  - paragraph [ref=e303]: Öl gehört auf rohes oder bereits geöltes Holz. Lackierte Flächen nehmen es nicht auf. An einer verdeckten Stelle zeigt ein Wassertropfen, ob die Fläche saugt. Perlt er vollständig ab, liegt meist eine geschlossene Beschichtung vor.
+              - generic [ref=e304]:
+                - generic [ref=e305]: "02"
+                - generic [ref=e306]:
+                  - heading "Gleichmäßig vorbereiten" [level=3] [ref=e307]
+                  - paragraph [ref=e308]: In Faserrichtung schleifen und die Körnung nicht überspringen. Kanten nur leicht brechen. Staub aus Poren und Fugen entfernen; feuchter Schleifstaub erzeugt später Flecken.
+              - generic [ref=e309]:
+                - generic [ref=e310]: "03"
+                - generic [ref=e311]:
+                  - heading "Dünn sättigen" [level=3] [ref=e312]
+                  - paragraph [ref=e313]: Öl abschnittsweise mit Tuch oder Pinsel verteilen. Produktangabe zur Einwirkzeit beachten. Trockene Stellen nachversorgen, Pfützen und Läufer vermeiden.
+              - generic [ref=e314]:
+                - generic [ref=e315]: "04"
+                - generic [ref=e316]:
+                  - heading "Überschuss abnehmen" [level=3] [ref=e317]
+                  - paragraph [ref=e318]: Mit sauberem Tuch so lange nachwischen, bis die Fläche trocken wirkt. Klebrige Stellen entstehen fast immer durch zu viel Öl. Erst nach vollständiger Trocknung einen zweiten dünnen Auftrag prüfen.
+              - generic [ref=e319]:
+                - generic [ref=e320]: "05"
+                - generic [ref=e321]:
+                  - heading "Tücher sicher lagern" [level=3] [ref=e322]
+                  - paragraph [ref=e323]: "Ölgetränkte Tücher können sich selbst entzünden. Nach Herstellerangabe behandeln: ausgebreitet im Freien trocknen oder in einem dicht schließenden, geeigneten Metallbehälter verwahren und örtlich korrekt entsorgen."
+          - generic [ref=e324]:
+            - paragraph [ref=e325]: Typische Fehler
+            - heading "Das besser lassen" [level=2] [ref=e326]
+            - list [ref=e327]:
+              - listitem [ref=e328]: × Öl auf unbekannten Lack auftragen
+              - listitem [ref=e329]: × zu viel Material stehen lassen
+              - listitem [ref=e330]: × mit kreisenden Schleifspuren arbeiten
+              - listitem [ref=e331]: × benutzte Öltücher zusammenknüllen
+          - generic [ref=e335]:
+            - heading "Wann ein Fachbetrieb übernehmen sollte" [level=2] [ref=e336]
+            - paragraph [ref=e337]: Bei großen zusammenhängenden Flächen, unbekannten Altbeschichtungen oder wertvollen Furnieren lohnt eine fachliche Probe. So bleibt der Farbton über die gesamte Fläche gleich.
+          - generic [ref=e338]:
+            - paragraph [ref=e339]: Kurz geklärt
+            - heading "Häufige Fragen" [level=2] [ref=e340]
+            - generic [ref=e341]:
+              - group [ref=e342]:
+                - generic "Wie lange muss Holzöl trocknen? +" [ref=e343] [cursor=pointer]:
+                  - text: Wie lange muss Holzöl trocknen?
+                  - generic [ref=e344]: +
+              - group [ref=e345]:
+                - generic "Warum bleibt geöltes Holz klebrig? +" [ref=e346] [cursor=pointer]:
+                  - text: Warum bleibt geöltes Holz klebrig?
+                  - generic [ref=e347]: +
+              - group [ref=e348]:
+                - generic "Muss Holz vor dem Ölen geschliffen werden? +" [ref=e349] [cursor=pointer]:
+                  - text: Muss Holz vor dem Ölen geschliffen werden?
+                  - generic [ref=e350]: +
+          - generic [ref=e351]:
+            - generic [ref=e352]:
+              - paragraph [ref=e353]: Noch unsicher?
+              - heading "Ein Foto zeigt oft mehr als zehn Sätze." [level=2] [ref=e354]
+            - link "Projektfoto per WhatsApp" [ref=e355] [cursor=pointer]:
+              - /url: https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20habe%20den%20Ratgeber%20%E2%80%9EHolz%20richtig%20%C3%B6len%3A%20d%C3%BCnn%20auftragen%2C%20sauber%20abnehmen%E2%80%9C%20gelesen.%20Hier%20ist%20ein%20Foto%20von%20meinem%20Projekt%3A
+          - generic [ref=e359]:
+            - heading "Quellen und fachliche Grundlagen" [level=2] [ref=e360]
+            - paragraph [ref=e361]: Inhalt redaktionell aus Handwerkspraxis und den folgenden Verbraucher- und Fachinformationen erstellt.
+            - list [ref=e362]:
+              - listitem [ref=e363]:
+                - 'link "OBI: Holz richtig schleifen" [ref=e364] [cursor=pointer]':
+                  - /url: https://www.obi.de/magazin/wohnen/innengestaltung/upcycling-moebel/holz-schleifen
+              - listitem [ref=e368]:
+                - 'link "Umweltbundesamt: Lacke und Lasuren" [ref=e369] [cursor=pointer]':
+                  - /url: https://www.umweltbundesamt.de/lacke-lasuren
+    - generic [ref=e373]:
+      - paragraph [ref=e374]: Weiterlesen
+      - heading "Passende Anleitungen" [level=2] [ref=e375]
+      - generic [ref=e376]:
+        - 'link "04 · Oberfläche Holz lackieren: Vorbereitung entscheidet" [ref=e377] [cursor=pointer]':
+          - /url: /ratgeber/holz-richtig-lackieren
+          - generic [ref=e378]: 04 · Oberfläche
+          - 'heading "Holz lackieren: Vorbereitung entscheidet" [level=3] [ref=e379]'
+        - link "05 · Oberfläche Alten Lack entfernen, ohne das Holz zu ruinieren" [ref=e383] [cursor=pointer]:
+          - /url: /ratgeber/alten-lack-von-holz-entfernen
+          - generic [ref=e384]: 05 · Oberfläche
+          - heading "Alten Lack entfernen, ohne das Holz zu ruinieren" [level=3] [ref=e385]
+        - 'link "02 · Pflege Wasserflecken auf Holz: erst den Fleck lesen" [ref=e389] [cursor=pointer]':
+          - /url: /ratgeber/wasserflecken-auf-holz-entfernen
+          - generic [ref=e390]: 02 · Pflege
+          - 'heading "Wasserflecken auf Holz: erst den Fleck lesen" [level=3] [ref=e391]'
+    - generic [ref=e395]:
+      - generic [ref=e396]:
+        - generic [ref=e397]:
+          - img "Thomas Frenzel Montage und Handwerk" [ref=e398]
+          - paragraph [ref=e399]: Handwerk, Montage und Holzarbeiten im Kreis Böblingen.
+        - generic [ref=e400]:
+          - generic [ref=e401]: Seiten
+          - link "Startseite" [ref=e402] [cursor=pointer]:
+            - /url: /
+          - link "Arbeiten" [ref=e403] [cursor=pointer]:
+            - /url: /#gallery
+          - link "Ratgeber" [ref=e404] [cursor=pointer]:
+            - /url: /ratgeber
+        - generic [ref=e405]:
+          - generic [ref=e406]: Kontakt
+          - link "0170 0980942" [ref=e407] [cursor=pointer]:
+            - /url: tel:+491700980942
+          - link "info@tf-m.de" [ref=e408] [cursor=pointer]:
+            - /url: mailto:info@tf-m.de
+          - link "WhatsApp" [ref=e409] [cursor=pointer]:
+            - /url: https://wa.me/491700980942
+      - generic [ref=e410]:
+        - generic [ref=e411]: © 2026 Thomas Frenzel
+        - generic [ref=e412]:
+          - link "Impressum" [ref=e413] [cursor=pointer]:
+            - /url: /impressum
+          - link "Datenschutz" [ref=e414] [cursor=pointer]:
+            - /url: /datenschutz

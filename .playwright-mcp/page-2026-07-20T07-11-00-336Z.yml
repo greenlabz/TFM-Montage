@@ -1,0 +1,23 @@
+- generic [active] [ref=f23e1]:
+  - main [ref=f23e2]:
+    - generic [ref=f23e3]:
+      - link "← Zurück zur Startseite" [ref=f23e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f23e5]: Handwerkliche Leistungen
+      - heading "Möbelmontage & kleiner Möbelbau" [level=1] [ref=f23e6]
+      - generic [ref=f23e7]:
+        - paragraph [ref=f23e8]: Ein fehlerfreier Aufbau sorgt für langlebige und sicher funktionierende Möbel. Wir bieten professionelle Möbelmontage für Privat- und Gewerbekunden in Böblingen, Sindelfingen, Schönaich und Umgebung an.
+        - generic [ref=f23e9]: Der Aufbau komplexer Kleiderschränke, Büromöbelsysteme oder individuell geplanter Regale kann schnell zur Herausforderung werden. Wir übernehmen die fachgerechte Montage von Systemmöbeln namhafter Hersteller. Dazu gehört das präzise Ausrichten der Korpusse, das Einstellen der Scharniere und Spaltmaße sowie die sichere und verdeckte Wandbefestigung (Kippsicherung). Neben der reinen Montage von Fertigmöbeln realisieren wir auch kleine Möbelbauprojekte und individuelle Anpassungen. Wenn Standardmaße nicht passen, schneiden wir Deckplatten, Passleisten oder Regalböden millimetergenau zu. Auch der Einbau von Schiebetüren in Nischen oder das Nachrüsten von Schubladenauszügen und Dämpfern (Soft-Close-Systeme) gehört zu unserem Leistungsspektrum. Sauberkeit, Vorsicht im Umgang mit den Bauteilen und eine besenreine Übergabe sind für uns selbstverständlich.
+      - generic [ref=f23e10]:
+        - heading "Häufig gestellte Fragen (FAQ)" [level=2] [ref=f23e11]
+        - generic [ref=f23e12]:
+          - generic [ref=f23e13]:
+            - heading "Montieren Sie Möbel aller Hersteller?" [level=3] [ref=f23e14]
+            - paragraph [ref=f23e15]: Ja, wir haben jahrelange Erfahrung im Aufbau von Möbelsystemen unterschiedlichster Hersteller – von klassischen Möbelhaus-Systemen wie IKEA (PAX, BESTÅ) bis hin zu hochwertigen Designermöbeln und Büroeinrichtungen.
+          - generic [ref=f23e16]:
+            - heading "Können bestehende Möbel umgebaut oder angepasst werden?" [level=3] [ref=f23e17]
+            - paragraph [ref=f23e18]: Ja, oft lassen sich Standardmöbel an spezielle Raumsituationen anpassen, z.B. durch das Einkürzen von Regalwänden wegen Dachschrägen oder das Anfertigen passender Blenden für Nischen.
+          - generic [ref=f23e19]:
+            - heading "Helfen Sie auch beim Abbau und Wiederaufbau bei einem Umzug?" [level=3] [ref=f23e20]
+            - paragraph [ref=f23e21]: Selbstverständlich. Wir demontieren Ihre wertvollen Möbel fachgerecht und bauen diese am neuen Standort wieder sicher und millimetergenau auf.
+  - alert [ref=f23e22]

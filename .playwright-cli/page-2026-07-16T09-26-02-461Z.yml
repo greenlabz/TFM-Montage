@@ -1,0 +1,204 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - link "TFM Startseite" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - img "Thomas Frenzel Montage und Handwerk" [ref=e5]
+    - navigation "Hauptnavigation" [ref=e6]:
+      - link "Arbeiten" [ref=e7] [cursor=pointer]:
+        - /url: /#gallery
+      - link "Ablauf" [ref=e8] [cursor=pointer]:
+        - /url: /#process
+      - link "Ratgeber" [ref=e9] [cursor=pointer]:
+        - /url: /ratgeber
+    - link "Projektfoto senden" [ref=e10] [cursor=pointer]:
+      - /url: https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Holzprojekt.
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: TFM Werkstattwissen · 12 Anleitungen
+    - generic [ref=e13]:
+      - heading "Holz verstehen. Fehler vermeiden." [level=1] [ref=e14]: Holz verstehen.Fehler vermeiden.
+      - paragraph [ref=e17]: "Klare Antworten für Pflege, Oberfläche und kleine Reparaturen. Mit ehrlicher Grenze: wann Selbermachen reicht und wann Fachwissen nötig ist."
+  - region [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: Nachschlagen
+        - heading "Was willst du lösen?" [level=2] [ref=e22]
+      - generic [ref=e23]:
+        - generic [ref=e27]: Ratgeber durchsuchen
+        - textbox "Ratgeber durchsuchen" [ref=e28]:
+          - /placeholder: z. B. Wasserfleck
+    - generic "Themen filtern" [ref=e29]:
+      - button "Alle" [ref=e30] [cursor=pointer]
+      - button "Oberfläche" [ref=e31] [cursor=pointer]
+      - button "Pflege" [ref=e32] [cursor=pointer]
+      - button "Reparatur" [ref=e33] [cursor=pointer]
+      - button "Grundwissen" [ref=e34] [cursor=pointer]
+      - button "Feuchteschaden" [ref=e35] [cursor=pointer]
+      - button "Holzschutz" [ref=e36] [cursor=pointer]
+    - generic [ref=e37]:
+      - article [ref=e38]:
+        - 'link "Holz richtig ölen: dünn auftragen, sauber abnehmen lesen" [ref=e39] [cursor=pointer]':
+          - /url: /ratgeber/holz-richtig-oelen
+          - img "Geölte Holzoberfläche mit sichtbarer natürlicher Maserung" [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: 01 · Oberfläche
+              - generic [ref=e45]: 7 Min.
+            - 'heading "Holz richtig ölen: dünn auftragen, sauber abnehmen" [level=3] [ref=e46]'
+            - paragraph [ref=e47]: So wird die Oberfläche gleichmäßig, ohne klebrige Stellen oder dunkle Ränder.
+            - generic [ref=e48]: Anleitung lesen
+      - article [ref=e52]:
+        - 'link "Wasserflecken auf Holz: erst den Fleck lesen lesen" [ref=e53] [cursor=pointer]':
+          - /url: /ratgeber/wasserflecken-auf-holz-entfernen
+          - img "Detailaufnahme einer Holzoberfläche bei der Bearbeitung" [ref=e55]
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]: 02 · Pflege
+              - generic [ref=e59]: 6 Min.
+            - 'heading "Wasserflecken auf Holz: erst den Fleck lesen" [level=3] [ref=e60]'
+            - paragraph [ref=e61]: Weiße Ringe sitzen meist oben. Dunkle Flecken gehen oft tiefer. Davon hängt die Reparatur ab.
+            - generic [ref=e62]: Anleitung lesen
+      - article [ref=e66]:
+        - link "Kratzer und Dellen im Holz reparieren lesen" [ref=e67] [cursor=pointer]:
+          - /url: /ratgeber/kratzer-dellen-holz-reparieren
+          - img "Verlegter Holzboden mit gleichmäßiger Oberfläche" [ref=e69]
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - generic [ref=e72]: 03 · Reparatur
+              - generic [ref=e73]: 8 Min.
+            - heading "Kratzer und Dellen im Holz reparieren" [level=3] [ref=e74]
+            - paragraph [ref=e75]: Oberflächlicher Strich, tiefe Kerbe oder Druckstelle? Drei Schäden, drei saubere Wege.
+            - generic [ref=e76]: Anleitung lesen
+      - article [ref=e80]:
+        - 'link "Holz lackieren: Vorbereitung entscheidet lesen" [ref=e81] [cursor=pointer]':
+          - /url: /ratgeber/holz-richtig-lackieren
+          - img "Lackierte Holzelemente in einem ruhigen Wohninterieur" [ref=e83]
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - generic [ref=e86]: 04 · Oberfläche
+              - generic [ref=e87]: 8 Min.
+            - 'heading "Holz lackieren: Vorbereitung entscheidet" [level=3] [ref=e88]'
+            - paragraph [ref=e89]: Saubere Kanten, ruhige Fläche, keine Nasen. Der Ablauf für einen belastbaren Lackaufbau.
+            - generic [ref=e90]: Anleitung lesen
+      - article [ref=e94]:
+        - link "Alten Lack entfernen, ohne das Holz zu ruinieren lesen" [ref=e95] [cursor=pointer]:
+          - /url: /ratgeber/alten-lack-von-holz-entfernen
+          - img "Altes Holzbauteil während einer behutsamen Aufarbeitung" [ref=e97]
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - generic [ref=e100]: 05 · Oberfläche
+              - generic [ref=e101]: 9 Min.
+            - heading "Alten Lack entfernen, ohne das Holz zu ruinieren" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Schleifen, schaben, Wärme oder Abbeizer? So wählst du den mildesten wirksamen Weg.
+            - generic [ref=e104]: Anleitung lesen
+      - article [ref=e108]:
+        - link "Welche Körnung für Holz? Ein klarer Schleifplan lesen" [ref=e109] [cursor=pointer]:
+          - /url: /ratgeber/holz-schleifen-koernung
+          - img "Holzleisten mit sauber geschliffenen Oberflächen" [ref=e111]
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]: 06 · Grundwissen
+              - generic [ref=e115]: 6 Min.
+            - heading "Welche Körnung für Holz? Ein klarer Schleifplan" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Grob formt, mittel glättet, fein bereitet vor. Diese Reihenfolge verhindert sichtbare Schleifspuren.
+            - generic [ref=e118]: Anleitung lesen
+      - article [ref=e122]:
+        - link "Ausgerissenes Scharnier wieder fest bekommen lesen" [ref=e123] [cursor=pointer]:
+          - /url: /ratgeber/ausgerissenes-scharnier-reparieren
+          - img "Handwerker bei einer präzisen Möbelreparatur" [ref=e125]
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - generic [ref=e128]: 07 · Reparatur
+              - generic [ref=e129]: 7 Min.
+            - heading "Ausgerissenes Scharnier wieder fest bekommen" [level=3] [ref=e130]
+            - paragraph [ref=e131]: Nicht einfach eine dickere Schraube eindrehen. So sitzt die Tür wieder gerade und dauerhaft.
+            - generic [ref=e132]: Anleitung lesen
+      - article [ref=e136]:
+        - link "Furnier reparieren, ohne durchzuschleifen lesen" [ref=e137] [cursor=pointer]:
+          - /url: /ratgeber/furnier-reparieren
+          - img "Aufarbeitung eines furnierten Möbelstücks" [ref=e139]
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]: 08 · Reparatur
+              - generic [ref=e143]: 8 Min.
+            - heading "Furnier reparieren, ohne durchzuschleifen" [level=3] [ref=e144]
+            - paragraph [ref=e145]: "Lose Kante, Blase oder Fehlstelle: Furnier braucht Druck, Geduld und sehr wenig Abtrag."
+            - generic [ref=e146]: Anleitung lesen
+      - article [ref=e150]:
+        - 'link "Aufgequollenes Holz: erst trocknen, dann entscheiden lesen" [ref=e151] [cursor=pointer]':
+          - /url: /ratgeber/aufgequollenes-holz-reparieren
+          - img "Holzbauteile in einem Innenraum mit erhöhtem Feuchterisiko" [ref=e153]
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - generic [ref=e156]: 09 · Feuchteschaden
+              - generic [ref=e157]: 7 Min.
+            - 'heading "Aufgequollenes Holz: erst trocknen, dann entscheiden" [level=3] [ref=e158]'
+            - paragraph [ref=e159]: Massivholz kann sich beruhigen. Spanplatte bleibt oft dauerhaft geschädigt. So erkennst du den Unterschied.
+            - generic [ref=e160]: Anleitung lesen
+      - article [ref=e164]:
+        - 'link "Holzwurm erkennen: alte Löcher oder aktiver Befall? lesen" [ref=e165] [cursor=pointer]':
+          - /url: /ratgeber/holzwurm-erkennen
+          - img "Ältere Holzkonstruktion in einem Treppenhaus" [ref=e167]
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - generic [ref=e170]: 10 · Holzschutz
+              - generic [ref=e171]: 7 Min.
+            - 'heading "Holzwurm erkennen: alte Löcher oder aktiver Befall?" [level=3] [ref=e172]'
+            - paragraph [ref=e173]: Löcher allein beweisen keinen aktuellen Befall. Frisches Bohrmehl und neue Spuren sind entscheidend.
+            - generic [ref=e174]: Anleitung lesen
+      - article [ref=e178]:
+        - 'link "Holz draußen schützen: Konstruktion vor Chemie lesen" [ref=e179] [cursor=pointer]':
+          - /url: /ratgeber/holz-aussenbereich-schuetzen
+          - img "Holzkonstruktion mit klaren Fugen und geschützten Flächen" [ref=e181]
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - generic [ref=e184]: 11 · Holzschutz
+              - generic [ref=e185]: 8 Min.
+            - 'heading "Holz draußen schützen: Konstruktion vor Chemie" [level=3] [ref=e186]'
+            - paragraph [ref=e187]: Wasser muss ablaufen, Hirnholz braucht Schutz, Luft muss zirkulieren. Dann hält auch die Oberfläche länger.
+            - generic [ref=e188]: Anleitung lesen
+      - article [ref=e192]:
+        - link "Holzschneidebrett reinigen und pflegen lesen" [ref=e193] [cursor=pointer]:
+          - /url: /ratgeber/holzschneidebrett-pflegen
+          - img "Saubere Holzfläche als Beispiel für regelmäßige Holzpflege" [ref=e195]
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - generic [ref=e198]: 12 · Pflege
+              - generic [ref=e199]: 6 Min.
+            - heading "Holzschneidebrett reinigen und pflegen" [level=3] [ref=e200]
+            - paragraph [ref=e201]: Kurz nass, sofort trocken, nie in die Spülmaschine. So bleibt das Brett glatt und hygienisch.
+            - generic [ref=e202]: Anleitung lesen
+  - generic [ref=e206]:
+    - paragraph [ref=e207]: Aus der Praxis
+    - heading "Keine Abkürzung, die das Holz später bezahlt." [level=2] [ref=e208]
+    - generic [ref=e209]:
+      - generic [ref=e210]: Material zuerst bestimmen
+      - generic [ref=e211]: Immer verdeckt testen
+      - generic [ref=e212]: Bei Tragwerk und Schadstoffen stoppen
+  - generic [ref=e213]:
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - img "Thomas Frenzel Montage und Handwerk" [ref=e216]
+        - paragraph [ref=e217]: Handwerk, Montage und Holzarbeiten im Kreis Böblingen.
+      - generic [ref=e218]:
+        - generic [ref=e219]: Seiten
+        - link "Startseite" [ref=e220] [cursor=pointer]:
+          - /url: /
+        - link "Arbeiten" [ref=e221] [cursor=pointer]:
+          - /url: /#gallery
+        - link "Ratgeber" [ref=e222] [cursor=pointer]:
+          - /url: /ratgeber
+      - generic [ref=e223]:
+        - generic [ref=e224]: Kontakt
+        - link "0170 0980942" [ref=e225] [cursor=pointer]:
+          - /url: tel:+491700980942
+        - link "info@tf-m.de" [ref=e226] [cursor=pointer]:
+          - /url: mailto:info@tf-m.de
+        - link "WhatsApp" [ref=e227] [cursor=pointer]:
+          - /url: https://wa.me/491700980942
+    - generic [ref=e228]:
+      - generic [ref=e229]: © 2026 Thomas Frenzel
+      - generic [ref=e230]:
+        - link "Impressum" [ref=e231] [cursor=pointer]:
+          - /url: /impressum
+        - link "Datenschutz" [ref=e232] [cursor=pointer]:
+          - /url: /datenschutz
