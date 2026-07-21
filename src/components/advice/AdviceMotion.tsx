@@ -81,7 +81,7 @@ export function GuideExplorer({ guides, categories }: { guides: Summary[]; categ
               <span>Dein Projekt sieht ähnlich aus?</span>
               <a
                 className="conversion-cta advice-card-whatsapp"
-                href={`https://wa.me/491700980942?text=${encodeURIComponent(`Hallo Thomas, ich habe den Ratgeber „${guide.title}“ gelesen. Hier ist ein Foto von meinem Projekt:`)}`}
+                href={`https://wa.me/4917622389320?text=${encodeURIComponent(`Hallo Thomas, ich habe den Ratgeber „${guide.title}“ gelesen. Hier ist ein Foto von meinem Projekt:`)}`}
                 target="_blank"
                 rel="noreferrer"
               >

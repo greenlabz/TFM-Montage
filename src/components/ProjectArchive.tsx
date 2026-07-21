@@ -225,7 +225,7 @@ export default function ProjectArchive() {
           <div className="mt-24 flex flex-col items-start justify-between gap-8 border-t border-white/12 pt-10 md:flex-row md:items-center">
             <p className="max-w-xl text-base leading-relaxed text-white/60">Ein Foto reicht für den ersten Schritt. Ich prüfe, was möglich und sinnvoll ist.</p>
             <a
-              href="https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken."
+              href="https://wa.me/4917622389320?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken."
               target="_blank"
               rel="noopener noreferrer"
               className="conversion-cta rounded-full px-9 py-4 font-display text-xs uppercase tracking-[0.18em]"

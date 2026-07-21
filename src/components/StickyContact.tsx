@@ -41,7 +41,7 @@ export default function StickyContact({ revealed = true, onEmailClick }: { revea
     >
       {/* WhatsApp Button */}
       <a 
-        href="https://wa.me/491700980942" 
+        href="https://wa.me/4917622389320" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Projektfoto per WhatsApp senden"

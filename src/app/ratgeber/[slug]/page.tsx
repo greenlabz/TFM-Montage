@@ -170,7 +170,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
             <Reveal className="article-cta">
               <div><p>Noch unsicher?</p><h2>Ein Foto zeigt oft mehr als zehn Sätze.</h2></div>
-              <a className="conversion-cta" href={`https://wa.me/491700980942?text=${encodeURIComponent(`Hallo Thomas, ich habe den Ratgeber „${guide.title}“ gelesen. Hier ist ein Foto von meinem Projekt:`)}`} target="_blank" rel="noreferrer">
+              <a className="conversion-cta" href={`https://wa.me/4917622389320?text=${encodeURIComponent(`Hallo Thomas, ich habe den Ratgeber „${guide.title}“ gelesen. Hier ist ein Foto von meinem Projekt:`)}`} target="_blank" rel="noreferrer">
                 Projektfoto per WhatsApp <ArrowUpRight size={20} />
               </a>
             </Reveal>

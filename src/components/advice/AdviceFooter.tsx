@@ -19,7 +19,7 @@ export default function AdviceFooter() {
           <span>Kontakt</span>
           <a href="tel:+491709980942">+49 170 9980942</a>
           <a href="mailto:info@tf-m.de">info@tf-m.de</a>
-          <a href="https://wa.me/491700980942" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="https://wa.me/4917622389320" target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </div>
       <div className="advice-footer-bottom">

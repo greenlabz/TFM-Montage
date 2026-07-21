@@ -14,7 +14,7 @@ export default function AdviceHeader() {
       </nav>
       <a
         className="advice-header-cta conversion-cta"
-        href="https://wa.me/491700980942?text=Hallo%20Thomas%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Holzprojekt."
+        href="https://wa.me/4917622389320?text=Hallo%20Thomas%2C%20ich%20habe%20eine%20Frage%20zu%20meinem%20Holzprojekt."
         target="_blank"
         rel="noreferrer"
       >
