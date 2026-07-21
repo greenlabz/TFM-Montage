@@ -1014,7 +1014,7 @@ export default function Home() {
 
       <section id="gallery" ref={galleryRef} className="relative h-[300svh] bg-[#212121]">
         <div className="sticky top-0 h-svh h-screen overflow-hidden flex items-start pt-20 md:h-screen md:pt-32">
-          <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[250vw] md:w-[200vw]">
+          <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[360vw] md:w-[200vw]">
             
             {/* Intro Panel — oberhalb der Bilder lesbar machen */}
             <div className="flex h-[calc(100svh-6rem)] h-[calc(100vh-6rem)] w-screen shrink-0 items-start px-6 md:h-[calc(100vh-8rem)] md:px-16">
