@@ -399,7 +399,7 @@ export default function Home() {
     target: galleryRef,
     offset: ['start start', 'end end']
   });
-  const galleryX = useTransform(galleryProgress, [0, 1], ["0%", "-60%"]);
+  const galleryX = useTransform(galleryProgress, [0, 1], ["0%", "-80%"]);
 
   const gallery2Ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress: gallery2Progress } = useScroll({
@@ -869,7 +869,7 @@ export default function Home() {
             <div className="w-full sm:w-auto text-center">
               <div className="inline-flex w-full sm:w-auto">
                 <a
-                  href="https://wa.me/4917622389320?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken."
+                  href="https://wa.me/491709980942?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hero-primary-cta conversion-cta inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-8 py-4 font-display text-xs uppercase tracking-widest sm:w-auto"
@@ -1012,9 +1012,9 @@ export default function Home() {
 
 
 
-      <section id="gallery" ref={galleryRef} className="relative h-[500svh] md:h-[300svh] bg-[#212121]">
+      <section id="gallery" ref={galleryRef} className="relative h-[600svh] md:h-[300svh] bg-[#212121]">
         <div className="sticky top-0 h-svh h-screen overflow-hidden flex items-start pt-20 md:h-screen md:pt-32">
-          <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[360vw] md:w-[200vw]">
+          <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[420vw] md:w-[200vw]">
             
             {/* Intro Panel — oberhalb der Bilder lesbar machen */}
             <div className="flex h-[calc(100svh-6rem)] h-[calc(100vh-6rem)] w-screen shrink-0 items-start px-6 md:h-[calc(100vh-8rem)] md:px-16">
@@ -1393,7 +1393,7 @@ export default function Home() {
             <button type="button" onClick={openContact} className="conversion-cta w-full rounded-full px-10 py-5 font-display text-sm font-bold uppercase tracking-widest sm:w-auto">
               Nachricht senden
             </button>
-            <a href="https://wa.me/4917622389320" target="_blank" rel="noopener noreferrer" className="conversion-cta inline-flex w-full items-center justify-center gap-3 rounded-full px-10 py-5 font-display text-sm uppercase tracking-widest sm:w-auto">
+            <a href="https://wa.me/491709980942" target="_blank" rel="noopener noreferrer" className="conversion-cta inline-flex w-full items-center justify-center gap-3 rounded-full px-10 py-5 font-display text-sm uppercase tracking-widest sm:w-auto">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
               </svg>
