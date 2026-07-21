@@ -1012,7 +1012,7 @@ export default function Home() {
 
 
 
-      <section id="gallery" ref={galleryRef} className="relative h-[300svh] bg-[#212121]">
+      <section id="gallery" ref={galleryRef} className="relative h-[500svh] md:h-[300svh] bg-[#212121]">
         <div className="sticky top-0 h-svh h-screen overflow-hidden flex items-start pt-20 md:h-screen md:pt-32">
           <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[360vw] md:w-[200vw]">
             
