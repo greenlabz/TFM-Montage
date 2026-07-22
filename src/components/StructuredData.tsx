@@ -43,7 +43,7 @@ export default function StructuredData({ faq, breadcrumb, localBusiness, person 
       "telephone": localBusiness.telephone,
       "email": localBusiness.email,
       "image": "https://www.tf-m.de/og-tfm.jpg",
-      "logo": "https://www.tf-m.de/Tom%20Logo.png",
+      "logo": "https://www.tf-m.de/Tom%20Logo.webp",
       "url": "https://www.tf-m.de",
       "priceRange": "€€",
       "address": {
