@@ -440,7 +440,11 @@ export default function Home() {
     target: galleryRef,
     offset: ['start start', 'end end']
   });
-  const galleryXDesktop = useTransform(galleryProgress, [0, 1], ["0%", "-80%"]);
+  const galleryXDesktop = useTransform(
+    galleryProgress,
+    [0, 0.9, 1],
+    [0, -(mobileGalleryWidth + 720), -(mobileGalleryWidth + 720)]
+  );
   const galleryXMobile = useTransform(
     galleryProgress,
     [0, 0.88, 1],
@@ -489,6 +493,7 @@ export default function Home() {
   const processLineScale = useTransform(processRevealProgress, [0.05, 0.86], [0, 1]);
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openReview, setOpenReview] = useState<number | null>(null);
   const [cookieConsent, setCookieConsent] = useState<'accepted' | 'rejected' | null>(() => {
     if (typeof window !== 'undefined') {
       const stored = window.localStorage.getItem('cookie-consent');
@@ -630,6 +635,55 @@ export default function Home() {
     document.body.removeChild(a);
   };
 
+  const testimonials = [
+    {
+      quote: `Absolut empfehlenswert! TFM hat unseren Keller verwandelt! ⭐⭐⭐⭐⭐
+
+Wir haben nach einem zuverlässigen Handwerker für unseren Kellerausbau im Kreis Böblingen gesucht und sind auf Thomas von TFM gestoßen – eine absolut goldrichtige Entscheidung!
+
+Unser Ziel war es, den alten Nutzkeller in modernen Wohnraum (Gästezimmer & Homeoffice) umzubauen. Thomas (TFM) hat uns von der ersten Beratung im Raum Böblingen / Sindelfingen über die Detailplanung bis hin zur perfekten Umsetzung hervorragend begleitet.
+
+Was uns besonders begeistert hat:
+
+Höchste Qualität: Saubere Arbeit bei Trockenbau, Wändedämmung und Bodenverlegung.
+
+Verlässlichkeit & Termintreue: Keine bösen Überraschungen bei Kosten oder Zeitplan – Absprachen werden zu 100 % eingehalten.
+
+Lokale Expertise: Thomas kennt die baulichen Besonderheiten bei Kellersanierungen in der Region (Feuchtigkeitsschutz, Dämmung, Belüftung) genau.
+
+Wer im Kreis Böblingen (egal ob Böblingen, Sindelfingen, Leonberg oder Herrenberg) einen Fachmann für Kellerausbau, Kellersanierung oder Wohnraumerweiterung sucht, ist bei Thomas (TFM) in den besten Händen. Unkompliziert, sauber, fair und fachlich top.
+
+Vielen Dank, Thomas, für die tolle Arbeit! Wir nutzen unseren neuen Keller jetzt mit Freude jeden Tag!`,
+      name: 'Roja R.',
+      location: 'Böblingen / Sindelfingen',
+      initials: 'KB'
+    },
+    {
+      quote: `Perfekter Partner für Büroumbau im Kreis Böblingen
+
+Für den Umbau und die Neugestaltung unserer neuen Büroräume im Kreis Böblingen haben wir Thomas von TFM beauftragt – und das Ergebnis hat unsere Erwartungen absolut übertroffen! Aus einer in die Jahre gekommenen Fläche hat Thomas ein modernes, funktionales und optisch ansprechendes Büro geschaffen. Von der durchdachten Neuaufteilung der Räume über saubere Trockenbauarbeiten bis hin zur fachgerechten Ausführung der Boden- und Wandgestaltungen lief alles reibungslos.
+
+Besonders beeindruckt hat uns die termingenaue Umsetzung, die für unseren pünktlichen Büro-Einzug und den reibungslosen Betriebsstart entscheidend war. Thomas arbeitet extrem professionell, denkt aktiv mit und hinterlässt die Baustelle stets sauber.
+
+Für Unternehmen und Gewerbetreibende im Kreis Böblingen – wie Böblingen, Sindelfingen, Leonberg oder Holzgerlingen –, die eine professionelle Bürorenovierung, Gewerbesanierung oder Raumumgestaltung suchen, ist Thomas (TFM) die absolut erste Adresse. Herzlichen Dank, Thomas, für die großartige Arbeit und den perfekten Ablauf!`,
+      name: 'Daniel K.',
+      location: 'Böblingen',
+      initials: 'DK'
+    },
+    {
+      quote: `Reparatur von Türen (TFM) überzeugt auf ganzer Linie!
+
+Wir hatten Thomas von TFM ursprünglich nur für die Reparatur unserer Türen in unserer Sindelfinger Wohnung angefragt. Wenn Türen klemmen, nicht mehr richtig schließen oder Abnutzungserscheinungen zeigen, braucht man einfach jemanden mit dem richtigen Blick fürs Detail. Thomas hat die Arbeiten extrem präzise, sauber und fachgerecht durchgeführt. Die Türen lassen sich wieder einwandfrei und wie am ersten Tag bedienen.
+
+Von dieser schnellen, unkomplizierten und handwerklich perfekten Arbeit waren wir so begeistert, dass wir Thomas direkt im Anschluss noch einen Folgeauftrag für weitere Arbeiten bei uns erteilt haben. Es ist heutzutage gar nicht so leicht, im Raum Böblingen / Sindelfingen Handwerker zu finden, die so zuverlässig, pünktlich und fair arbeiten.
+
+Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen echten Experten für Türreparaturen, Innenausbau oder allgemeine Renovierungsarbeiten sucht, ist bei Thomas (TFM) in den besten Händen. Ein absoluter Profi, den man jederzeit gerne wieder beauftragt und uneingeschränkt weiterempfehlen kann!`,
+      name: 'V. Tenes',
+      location: 'Sindelfingen',
+      initials: 'VT'
+    }
+  ];
+
   return (
     <div className="min-h-screen overflow-x-clip bg-[var(--background)] text-[var(--foreground)] font-body">
       <StructuredData
@@ -713,7 +767,7 @@ export default function Home() {
           className={`pointer-events-auto mx-auto flex items-center justify-between transition-[background-color,border-color,border-radius,box-shadow,color] duration-500 ease-out ${
             isNavCollapsed
               ? 'mt-4 w-[min(17rem,calc(100vw-2rem))] rounded-full border border-[#3f6f6b]/70 bg-[#181818] px-3 py-2 shadow-[0_18px_45px_-18px_rgba(0,0,0,0.72)]'
-              : `w-full max-w-[1500px] px-4 py-4 md:px-8 ${isLightSection ? 'text-[#212121]' : 'text-white'}`
+              : `w-full max-w-[1500px] px-4 py-4 md:px-8 ${isLightSection ? 'text-black' : 'text-white'}`
           }`}
         >
           <motion.div
@@ -878,20 +932,29 @@ export default function Home() {
             <source src="/hero-intro.mp4" type="video/mp4" />
           </video>
         </div>
+
+        <motion.div
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHeroRevealed ? 1 : 0 }}
+          transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute inset-0 z-[1] bg-white/55 backdrop-blur-[1px]"
+        />
         
         <motion.div 
-          className="z-10 max-w-4xl"
+          className="relative z-10 isolate max-w-4xl"
           initial="initial"
           animate={isHeroRevealed ? "animate" : "initial"}
           variants={stagger}
           aria-hidden={!isHeroRevealed}
           inert={!isHeroRevealed}
         >
+          <div className="relative z-10">
           <motion.span variants={fadeIn} className="font-display text-[#3a3a3a] uppercase tracking-[0.3em] text-sm mb-6 block">
             Thomas Frenzel · Kreis Böblingen
           </motion.span>
           <motion.h1 variants={fadeIn} className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight mb-8 max-w-5xl mx-auto">
-            <span className="relative inline-block pb-1 text-[#2f5f5a] [text-shadow:_0_1px_12px_rgba(255,255,255,0.6)]">
+            <span className="relative inline-block bg-gradient-to-r from-[#212121] to-[#707070] bg-clip-text pb-1 text-transparent">
               Zuverlässige
               <motion.svg
                 aria-hidden="true"
@@ -902,7 +965,7 @@ export default function Home() {
                 <motion.path
                   d="M4 17 C82 5 232 5 316 15"
                   fill="none"
-                  stroke="#3f6f6b"
+                  stroke="#212121"
                   strokeWidth="4"
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
@@ -912,7 +975,7 @@ export default function Home() {
                 />
               </motion.svg>
             </span><br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#212121] to-[#3a3a3a]">Montage oder Handwerksleistung gefällig?</span>
+            <span className="bg-gradient-to-r from-[#212121] to-[#707070] bg-clip-text text-transparent">Montage oder Handwerksleistung gefällig?</span>
           </motion.h1>
           <motion.p variants={fadeIn} className="font-body text-xl font-bold text-[#3a3a3a] max-w-2xl mx-auto mb-12">
             Persönlich, fachlich, regional.
@@ -943,6 +1006,7 @@ export default function Home() {
               Meine Arbeiten
             </a>
           </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -1067,7 +1131,7 @@ export default function Home() {
 
       <section id="gallery" ref={galleryRef} className="relative h-[420svh] bg-[#212121] md:h-[300svh]">
         <div className="sticky top-0 h-svh h-screen overflow-hidden flex items-start pt-20 md:h-screen md:pt-32">
-          <motion.div style={{ x: galleryX, willChange: 'transform' }} className="flex w-max shrink-0 items-start gap-8 md:w-[200vw] md:gap-10">
+          <motion.div style={{ x: galleryX, willChange: 'transform' }} className="flex w-max shrink-0 items-start gap-8 md:gap-10">
             
             {/* Intro Panel — oberhalb der Bilder lesbar machen */}
             <div className="flex h-[calc(100svh-6rem)] h-[calc(100vh-6rem)] w-screen shrink-0 items-start px-6 md:h-[calc(100vh-8rem)] md:px-16">
@@ -1106,7 +1170,7 @@ export default function Home() {
       </section>
 
       {/* Gallery 2 — horizontal on mobile and desktop */}
-      <section id="gallery2" ref={gallery2Ref} className="relative mt-32 h-[420svh] bg-[#212121] md:mt-0 md:h-[300svh]">
+      <section id="gallery2" ref={gallery2Ref} className="relative mt-32 h-[420svh] bg-[#212121] md:mt-32 md:h-[300svh]">
         <div className="sticky top-0 flex h-svh items-center overflow-hidden md:hidden">
           <motion.div style={{ x: gallery2X, willChange: 'transform' }} className="flex w-max shrink-0 items-center gap-8 pr-[calc(50vw-150px)]">
             <div className="flex h-svh w-screen shrink-0 items-center px-6">
@@ -1129,8 +1193,25 @@ export default function Home() {
         </div>
 
         <div className="sticky top-0 hidden h-screen overflow-hidden md:flex md:items-start">
-          <motion.div style={{ x: gallery2X, willChange: 'transform' }} className="flex w-[200vw] shrink-0 items-start gap-16">
-            <div className="flex w-full shrink-0 items-start justify-center gap-16">
+          <motion.div style={{ x: gallery2X, willChange: 'transform' }} className="flex w-max shrink-0 items-start gap-16">
+            <div className="flex h-screen w-screen shrink-0 items-start px-16 pt-32">
+              <div className="mx-auto w-full max-w-[1500px]">
+                <span className="mb-12 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c]">
+                  Raumwirkung
+                </span>
+                <div className="grid gap-16 md:grid-cols-[minmax(0,2.2fr)_minmax(18rem,0.8fr)] md:items-center">
+                  <h2 className="max-w-5xl font-[family-name:var(--font-sora)] text-[clamp(3.25rem,7.4vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-white">
+                    Veränderung darf leise sein.
+                  </h2>
+                  <div className="border-l border-white/20 pl-8 pr-16">
+                    <p className="max-w-sm font-[family-name:var(--font-dm-sans)] text-xl leading-[1.75] text-[#9f9f8c]">
+                      Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-start justify-center gap-16">
               <div className="relative aspect-[3/4] w-[500px] shrink-0 overflow-hidden bg-white/5 group">
                 <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -1179,7 +1260,7 @@ export default function Home() {
       {/* Gallery 4 — Sticky Horizontal Scroll */}
       <section id="gallery4" ref={gallery4Ref} className="relative h-[420svh] bg-[#212121] md:h-[300svh]">
         <div className="sticky top-0 flex h-svh items-start overflow-hidden pt-20 md:h-screen md:pt-0">
-          <motion.div style={{ x: gallery4X, willChange: 'transform' }} className="flex w-max shrink-0 gap-8 md:w-[250vw] md:gap-16 md:pr-32">
+          <motion.div style={{ x: gallery4X, willChange: 'transform' }} className="flex w-max shrink-0 gap-8 md:gap-16 md:pr-32">
             
             {/* Intro Panel */}
             <div className="flex h-[calc(100svh-5rem)] w-screen shrink-0 items-start px-6 md:h-screen md:px-16 md:pt-32">
@@ -1211,6 +1292,9 @@ export default function Home() {
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-8 md:mt-0 shrink-0">
                 <Image src="/Akustik3.jpg" alt="Akustik Panele 3" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 300px, 500px" />
               </div>
+              <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-8 md:mt-16 shrink-0">
+                <Image src="/Akustik4-studio.png" alt="Akustikpaneele in einem hellen Raum mit grünem Teppich" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 300px, 500px" />
+              </div>
             </div>
 
           </motion.div>
@@ -1225,41 +1309,41 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <div className="mb-16">
             <span className="font-display text-[#9f9f8c] uppercase tracking-[0.3em] text-xs mb-4 block">Kundenstimmen</span>
-            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-white">
+            <h2 className="relative inline-block font-display text-5xl md:text-7xl font-bold leading-[0.95] text-white">
               Zufriedene Kunden.
+              <motion.span
+                aria-hidden="true"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -bottom-3 left-0 h-1 w-full origin-left rounded-full bg-[#9f9f8c] md:-bottom-4"
+              />
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                quote: 'Top Qualität und pünktlich: Herr Frenzel hat unsere Küche montiert – saubere Arbeit und sehr freundlich.',
-                name: 'Michael Weber',
-                location: 'Böblingen',
-                initials: 'MW'
-              },
-              {
-                quote: 'Sehr zuverlässig und engagiert. Der Kellerumbau wurde termingerecht und in bester Qualität abgeschlossen.',
-                name: 'Sabine Klein',
-                location: 'Leonberg',
-                initials: 'SK'
-              },
-              {
-                quote: 'Kurze Wege, klare Kommunikation, saubere Ausführung. Ich bin sehr zufrieden mit der Montage.',
-                name: 'Thomas Berger',
-                location: 'Sindelfingen',
-                initials: 'TB'
-              }
-            ].map((item, i) => (
+            {testimonials.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                className="flex flex-col justify-between bg-white/10 border-l-4 border-[#9f9f8c] rounded-3xl p-6 md:p-8 border border-white/20"
+                onClick={() => setOpenReview(i)}
+                onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setOpenReview(i); } }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Bewertung von ${item.name} vollständig öffnen`}
+                className="group flex cursor-pointer flex-col justify-between bg-white/10 border-l-4 border-[#9f9f8c] rounded-3xl p-6 md:p-8 border border-white/20 transition-colors hover:bg-white/[0.14] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9f9f8c]"
               >
-                <p className="text-white text-sm md:text-base leading-relaxed mb-6">&ldquo;{item.quote}&rdquo;</p>
+                <div>
+                  <div className="mb-5 flex items-center gap-1 text-[#d8c49a]" aria-label="5 von 5 Sternen">
+                    {Array.from({ length: 5 }, (_, star) => <span key={star} aria-hidden="true">★</span>)}
+                  </div>
+                  <p className="line-clamp-5 whitespace-pre-line text-white text-sm md:text-base leading-relaxed mb-3">&ldquo;{item.quote}&rdquo;</p>
+                  <span className="text-xs text-[#9f9f8c] transition-colors group-hover:text-white">Bewertung vollständig lesen</span>
+                </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#9f9f8c]/20 text-[#9f9f8c] font-display text-sm font-semibold">
                     {item.initials}
@@ -1274,6 +1358,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {openReview !== null && (
+          <motion.div
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-4 py-6 md:px-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            role="presentation"
+            onClick={() => setOpenReview(null)}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="review-dialog-title"
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              onClick={(event) => event.stopPropagation()}
+              className="relative max-h-[min(86vh,48rem)] w-full max-w-2xl overflow-y-auto rounded-3xl bg-[#f4f1ea] p-6 text-[#212121] shadow-2xl md:p-10"
+            >
+              <button
+                type="button"
+                onClick={() => setOpenReview(null)}
+                aria-label="Bewertung schließen"
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-2xl text-[#212121]/60 transition-colors hover:bg-black/10 hover:text-[#212121]"
+              >
+                ×
+              </button>
+              <div className="mb-6 pr-10">
+                <div className="mb-3 flex items-center gap-1 text-[#b28a48]" aria-label="5 von 5 Sternen">
+                  {Array.from({ length: 5 }, (_, star) => <span key={star} aria-hidden="true">★</span>)}
+                </div>
+                <h3 id="review-dialog-title" className="font-display text-2xl font-semibold leading-tight md:text-3xl">
+                  {testimonials[openReview].name}
+                </h3>
+                <p className="mt-1 text-sm text-[#212121]/60">{testimonials[openReview].location}</p>
+              </div>
+              <p className="whitespace-pre-line text-sm leading-7 text-[#212121]/85 md:text-base">&ldquo;{testimonials[openReview].quote}&rdquo;</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* FAQ / Einwände */}
       <section id="faq" className="relative bg-[#212121] py-24 md:py-32">

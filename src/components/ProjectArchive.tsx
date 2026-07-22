@@ -36,6 +36,15 @@ const projects = [
     aspect: 'aspect-[4/5]'
   },
   {
+    id: 'boden-tueren',
+    image: '/projekt-boden-tueren.png',
+    title: 'Boden und Türen im Einklang',
+    category: 'Boden & Türen',
+    detail: 'Bodenflächen sauber verlegt und Türanschlüsse präzise in den Raum eingefügt.',
+    layout: 'md:col-span-5 md:mt-24',
+    aspect: 'aspect-[4/5]'
+  },
+  {
     id: 'kellerausbau',
     image: '/projekt-keller.png',
     title: 'Kellerausbau mit klarer Raumaufteilung',
@@ -51,6 +60,15 @@ const projects = [
     category: 'Treppen & Geländer',
     detail: 'Saubere Anschlüsse und eine ruhige Linienführung geben sicheren Halt.',
     layout: 'md:col-span-5 md:mt-24',
+    aspect: 'aspect-[4/5]'
+  },
+  {
+    id: 'tuerzargen-reparatur',
+    image: '/projekt-tuerzargen-reparatur.png',
+    title: 'Türzarge sauber instand gesetzt',
+    category: 'Türzargen-Reparatur',
+    detail: 'Beschädigte Anschlüsse fachgerecht überarbeitet und die Zarge sauber in die Wandfläche eingefasst.',
+    layout: 'md:col-span-7',
     aspect: 'aspect-[4/5]'
   },
   {
