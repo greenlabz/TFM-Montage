@@ -81,31 +81,35 @@ function useHasHydrated() {
 function ServiceStackCard({
   service,
   index,
-  progress
+  progress,
+  compact = false
 }: {
   service: (typeof services)[number];
   index: number;
   progress: MotionValue<number>;
+  compact?: boolean;
 }) {
-  const activeStart = serviceStarts[index];
-  const entryStart = Math.max(0, activeStart - 0.08);
-  const laterStarts = serviceStarts.slice(index + 1);
+  const compactStarts = [0.015, 0.17, 0.325, 0.48, 0.635];
+  const starts = compact ? compactStarts : serviceStarts;
+  const activeStart = starts[index];
+  const entryStart = Math.max(0, activeStart - (compact ? 0.055 : 0.08));
+  const laterStarts = starts.slice(index + 1);
   const fanStart = 0.82;
   const fanEnd = 0.9;
   const inputs = [entryStart, activeStart, ...laterStarts, fanStart, fanEnd];
-  const stackY = laterStarts.map((_, step) => -18 * (step + 1));
-  const stackScale = laterStarts.map((_, step) => 1 - 0.018 * (step + 1));
-  const finalY = stackY.at(-1) ?? 0;
-  const finalScale = stackScale.at(-1) ?? 1;
+  const stackY = laterStarts.map((_, step) => (compact ? -10 : -18) * (step + 1));
+  const stackScale = laterStarts.map((_, step) => 1 - (compact ? 0.014 : 0.018) * (step + 1));
+  const finalY = stackY[stackY.length - 1] ?? 0;
+  const finalScale = stackScale[stackScale.length - 1] ?? 1;
   const fanIndex = index - (services.length - 1) / 2;
-  const fromX = index % 2 === 0 ? 150 : -150;
-  const fromRotate = index % 2 === 0 ? 2.4 : -2.4;
+  const fromX = index % 2 === 0 ? (compact ? 88 : 150) : compact ? -88 : -150;
+  const fromRotate = index % 2 === 0 ? (compact ? 1.8 : 2.4) : compact ? -1.8 : -2.4;
 
-  const x = useTransform(progress, inputs, [fromX, 0, ...laterStarts.map(() => 0), 0, fanIndex * 42]);
-  const y = useTransform(progress, inputs, [100, 0, ...stackY, finalY, Math.abs(fanIndex) * 12]);
+  const x = useTransform(progress, inputs, [fromX, 0, ...laterStarts.map(() => 0), 0, fanIndex * (compact ? 14 : 42)]);
+  const y = useTransform(progress, inputs, [compact ? 72 : 100, 0, ...stackY, finalY, Math.abs(fanIndex) * (compact ? 8 : 12)]);
   const scale = useTransform(progress, inputs, [0.94, 1, ...stackScale, finalScale, 0.96]);
-  const rotate = useTransform(progress, inputs, [fromRotate, 0, ...laterStarts.map(() => 0), 0, fanIndex * 2.2]);
-  const opacity = useTransform(progress, [entryStart, activeStart, 1], [0, 1, 1]);
+  const rotate = useTransform(progress, inputs, [fromRotate, 0, ...laterStarts.map(() => 0), 0, fanIndex * (compact ? 1.4 : 2.2)]);
+  const opacity = useTransform(progress, [entryStart, activeStart, 1], [compact && index === 0 ? 0.65 : 0, 1, 1]);
   const copyOpacity = useTransform(progress, [activeStart - 0.015, activeStart + 0.04, 1], [0, 1, 1]);
   const copyY = useTransform(progress, [activeStart - 0.015, activeStart + 0.04], [15, 0]);
   const lineScale = useTransform(progress, [activeStart - 0.02, activeStart + 0.07], [0, 1]);
@@ -114,47 +118,48 @@ function ServiceStackCard({
   return (
     <motion.article
       style={{ x, y, scale, rotate, opacity, willChange: 'transform, opacity' }}
-      className="relative flex min-h-[21rem] w-[min(78vw,68rem)] overflow-hidden rounded-[2rem] border border-black/8 bg-white shadow-[0_32px_75px_-28px_rgba(0,0,0,0.38)]"
+      className="relative flex h-[min(27rem,calc(100svh-13rem))] min-h-[24rem] w-[calc(100vw-3rem)] overflow-hidden rounded-[1.65rem] border border-black/8 bg-white shadow-[0_28px_60px_-26px_rgba(0,0,0,0.42)] md:h-auto md:min-h-[21rem] md:w-[min(78vw,68rem)] md:rounded-[2rem] md:shadow-[0_32px_75px_-28px_rgba(0,0,0,0.38)]"
     >
       <motion.span
         style={{ scaleX: lineScale, transformOrigin: 'left' }}
         className="absolute left-0 right-0 top-0 h-1 bg-[#3f6f6b]"
         aria-hidden="true"
       />
-      <div className="grid w-full grid-cols-[9rem_1fr]">
-        <div className="flex flex-col justify-between border-r border-black/8 bg-[#f4f5f3] p-9">
+      <div className="grid w-full grid-rows-[5.25rem_1fr] md:grid-cols-[9rem_1fr] md:grid-rows-none">
+        <div className="flex items-center justify-between border-b border-black/8 bg-[#f4f5f3] px-6 py-4 md:flex-col md:items-stretch md:border-b-0 md:border-r md:p-9">
           <motion.div
             style={{ opacity: copyOpacity, y: copyY }}
-            className="flex h-16 w-16 items-center justify-center rounded-full border border-[#3f6f6b]/25 bg-[#3f6f6b]/10 text-[#3f6f6b]"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-[#3f6f6b]/25 bg-[#3f6f6b]/10 text-[#3f6f6b] md:h-16 md:w-16"
           >
-            <Icon size={31} strokeWidth={1.7} />
+            <Icon className="h-6 w-6 md:h-[31px] md:w-[31px]" strokeWidth={1.7} />
           </motion.div>
           <span className="font-display text-[10px] font-semibold uppercase tracking-[0.24em] text-[#6d7773]">
             Leistungsbereich
           </span>
         </div>
-        <motion.div style={{ opacity: copyOpacity, y: copyY }} className="flex flex-col justify-center px-14 py-12">
-          <h3 className="max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#212121] lg:text-5xl">
+        <motion.div style={{ opacity: copyOpacity, y: copyY }} className="flex min-w-0 flex-col justify-center px-6 py-7 sm:px-8 md:px-14 md:py-12">
+          <h3 className="max-w-3xl font-display text-[clamp(1.75rem,8vw,2.25rem)] font-semibold leading-[1.05] tracking-[-0.04em] text-[#212121] md:text-4xl lg:text-5xl">
             {service.title}
           </h3>
-          <p className="mt-7 max-w-3xl text-lg leading-[1.75] text-[#555b58]">{service.desc}</p>
-          <span className="mt-9 h-px w-20 bg-[#3f6f6b]/45" aria-hidden="true" />
+          <p className="mt-4 max-w-3xl text-[0.98rem] leading-[1.55] text-[#555b58] md:mt-7 md:text-lg md:leading-[1.75]">{service.desc}</p>
+          <span className="mt-6 h-px w-16 bg-[#3f6f6b]/45 md:mt-9 md:w-20" aria-hidden="true" />
         </motion.div>
       </div>
     </motion.article>
   );
 }
 
-function StaticServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
+function StaticServiceCard({ service, index, reduceMotion = false }: { service: (typeof services)[number]; index: number; reduceMotion?: boolean }) {
   const Icon = service.icon;
   return (
     <motion.article
-      initial={{ opacity: 0, y: 28, rotate: index % 2 === 0 ? 1 : -1 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 28, rotate: index % 2 === 0 ? 1 : -1 }}
       whileInView={{ opacity: 1, y: 0, rotate: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
-      className="rounded-[1.5rem] border border-black/8 bg-white p-7 shadow-[0_20px_45px_-28px_rgba(0,0,0,0.34)]"
+      transition={{ duration: reduceMotion ? 0 : 0.48, ease: [0.22, 1, 0.36, 1] }}
+      className="relative overflow-hidden rounded-[1.5rem] border border-black/8 bg-white p-7 shadow-[0_20px_45px_-28px_rgba(0,0,0,0.34)]"
     >
+      <span className="absolute inset-x-0 top-0 h-1 bg-[#3f6f6b]" aria-hidden="true" />
       <div className="mb-8 flex h-13 w-13 items-center justify-center rounded-full bg-[#3f6f6b]/10 text-[#3f6f6b]">
         <Icon size={25} strokeWidth={1.7} />
       </div>
@@ -189,7 +194,7 @@ function ServiceStack({
           <span className="font-display text-xs uppercase tracking-[0.3em] text-[#3f6f6b]">Angebot</span>
           <h2 className="mt-4 font-display text-5xl font-bold text-[#212121] md:text-7xl">Leistungen.</h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2">
-            {services.map((service, index) => <StaticServiceCard key={service.title} service={service} index={index} />)}
+            {services.map((service, index) => <StaticServiceCard key={service.title} service={service} index={index} reduceMotion />)}
           </div>
           <button type="button" onClick={onContact} className="conversion-cta mx-auto mt-14 flex rounded-full px-12 py-5 font-display text-sm uppercase tracking-widest">
             Projekt anfragen
@@ -200,16 +205,36 @@ function ServiceStack({
   }
 
   return (
-    <section id="services" ref={ref} className="relative bg-[#f0f0f0] md:h-[520vh]">
-      <div className="mx-auto px-6 py-24 md:hidden">
-        <span className="font-display text-xs uppercase tracking-[0.3em] text-[#3f6f6b]">Angebot</span>
-        <h2 className="mt-4 font-display text-5xl font-bold text-[#212121]">Leistungen.</h2>
-        <div className="mt-14 space-y-5">
-          {services.map((service, index) => <StaticServiceCard key={service.title} service={service} index={index} />)}
+    <section id="services" ref={ref} className="relative h-[560svh] bg-[#f0f0f0] md:h-[520vh]">
+      <div className="sticky top-0 h-svh overflow-clip md:hidden">
+        <div className="absolute inset-x-0 top-0 z-20 px-6 pt-16">
+          <span className="font-display text-xs uppercase tracking-[0.3em] text-[#3f6f6b]">Angebot</span>
+          <h2 className="mt-3 font-display text-[clamp(2.75rem,13vw,3.75rem)] font-bold leading-none tracking-[-0.045em] text-[#212121]">Leistungen.</h2>
         </div>
-        <button type="button" onClick={onContact} className="conversion-cta mx-auto mt-12 flex rounded-full px-10 py-5 font-display text-sm uppercase tracking-widest">
-          Projekt anfragen
-        </button>
+
+        <div className="absolute inset-x-0 bottom-20 top-36">
+          {services.map((service, index) => (
+            <div key={service.title} className="pointer-events-none absolute inset-0 flex items-center justify-center" style={{ zIndex: index + 1 }}>
+              <ServiceStackCard service={service} index={index} progress={scrollYProgress} compact />
+            </div>
+          ))}
+        </div>
+
+        <div className="absolute inset-x-0 bottom-[max(1rem,env(safe-area-inset-bottom))] z-20 flex justify-start px-6">
+          <motion.button
+            type="button"
+            onClick={onContact}
+            disabled={!hasCtaRevealed}
+            aria-hidden={!hasCtaRevealed}
+            tabIndex={hasCtaRevealed ? 0 : -1}
+            initial={{ opacity: 0, y: 12 }}
+            animate={hasCtaRevealed ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="conversion-cta flex rounded-full px-9 py-4 font-display text-xs uppercase tracking-widest"
+          >
+            Projekt anfragen
+          </motion.button>
+        </div>
       </div>
 
       <div className="sticky top-0 hidden h-screen overflow-hidden md:block">
@@ -395,18 +420,46 @@ export default function Home() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   
   const galleryRef = useRef<HTMLDivElement>(null);
+  const [isMobileGallery, setIsMobileGallery] = useState(false);
+  const [mobileGalleryWidth, setMobileGalleryWidth] = useState(390);
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    const syncViewport = () => {
+      setIsMobileGallery(query.matches);
+      setMobileGalleryWidth(window.innerWidth);
+    };
+    syncViewport();
+    query.addEventListener('change', syncViewport);
+    window.addEventListener('resize', syncViewport, { passive: true });
+    return () => {
+      query.removeEventListener('change', syncViewport);
+      window.removeEventListener('resize', syncViewport);
+    };
+  }, []);
   const { scrollYProgress: galleryProgress } = useScroll({
     target: galleryRef,
     offset: ['start start', 'end end']
   });
-  const galleryX = useTransform(galleryProgress, [0, 1], ["0%", "-80%"]);
+  const galleryXDesktop = useTransform(galleryProgress, [0, 1], ["0%", "-80%"]);
+  const galleryXMobile = useTransform(
+    galleryProgress,
+    [0, 0.88, 1],
+    [0, -(mobileGalleryWidth / 2 + 846), -(mobileGalleryWidth / 2 + 846)]
+  );
+  const galleryX = isMobileGallery ? galleryXMobile : galleryXDesktop;
 
   const gallery2Ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress: gallery2Progress } = useScroll({
     target: gallery2Ref,
     offset: ['start start', 'end end']
   });
-  const gallery2X = useTransform(gallery2Progress, [0, 1], ["0%", "-60%"]);
+  const gallery2XDesktop = useTransform(gallery2Progress, [0, 1], ["0%", "-60%"]);
+  const gallery2XMobile = useTransform(
+    gallery2Progress,
+    [0, 0.9, 1],
+    [0, -(mobileGalleryWidth / 2 + 846), -(mobileGalleryWidth / 2 + 846)]
+  );
+  const gallery2X = isMobileGallery ? gallery2XMobile : gallery2XDesktop;
 
 
   const gallery4Ref = useRef<HTMLDivElement>(null);
@@ -414,7 +467,13 @@ export default function Home() {
     target: gallery4Ref,
     offset: ['start start', 'end end']
   });
-  const gallery4X = useTransform(gallery4Progress, [0, 1], ["0%", "-60%"]);
+  const gallery4XDesktop = useTransform(gallery4Progress, [0, 1], ["0%", "-60%"]);
+  const gallery4XMobile = useTransform(
+    gallery4Progress,
+    [0, 0.9, 1],
+    [0, -(mobileGalleryWidth / 2 + 846), -(mobileGalleryWidth / 2 + 846)]
+  );
+  const gallery4X = isMobileGallery ? gallery4XMobile : gallery4XDesktop;
 
   const processRef = useRef<HTMLElement>(null);
   const { scrollYProgress: processProgress } = useScroll({
@@ -1012,9 +1071,9 @@ export default function Home() {
 
 
 
-      <section id="gallery" ref={galleryRef} className="relative h-[600svh] md:h-[300svh] bg-[#212121]">
+      <section id="gallery" ref={galleryRef} className="relative h-[420svh] bg-[#212121] md:h-[300svh]">
         <div className="sticky top-0 h-svh h-screen overflow-hidden flex items-start pt-20 md:h-screen md:pt-32">
-          <motion.div style={{ x: galleryX }} className="flex gap-8 md:gap-10 items-start shrink-0 w-[420vw] md:w-[200vw]">
+          <motion.div style={{ x: galleryX, willChange: 'transform' }} className="flex w-max shrink-0 items-start gap-8 md:w-[200vw] md:gap-10">
             
             {/* Intro Panel — oberhalb der Bilder lesbar machen */}
             <div className="flex h-[calc(100svh-6rem)] h-[calc(100vh-6rem)] w-screen shrink-0 items-start px-6 md:h-[calc(100vh-8rem)] md:px-16">
@@ -1036,7 +1095,7 @@ export default function Home() {
             </div>
 
             {/* Gallery 1 Images */}
-            <div className="flex gap-8 md:gap-16 items-start shrink-0 pr-16 md:pr-32">
+            <div className="flex shrink-0 items-start gap-8 pr-[calc(50vw-150px)] md:gap-16 md:pr-32">
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-8 md:mt-0 shrink-0">
                 <Image src="/Keller1-studio.png" alt="Ausgebauter Keller mit sauber ausgeführten Holzarbeiten" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
@@ -1052,45 +1111,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery 2 — Sticky Horizontal Scroll */}
-      <section id="gallery2" ref={gallery2Ref} className="relative h-[300svh] bg-[#212121]">
-        <div className="sticky top-0 h-svh overflow-hidden flex items-start md:h-screen">
-          <motion.div style={{ x: gallery2X }} className="flex gap-6 md:gap-16 items-start shrink-0 w-[420vw] md:w-[200vw]">
-            
-            {/* Mobile: intro panel inline with images */}
-            <div className="flex h-svh w-screen shrink-0 items-end px-6 pb-24 md:hidden">
-              <div className="max-w-[80%]">
+      {/* Gallery 2 — horizontal on mobile and desktop */}
+      <section id="gallery2" ref={gallery2Ref} className="relative mt-32 h-[420svh] bg-[#212121] md:mt-0 md:h-[300svh]">
+        <div className="sticky top-0 flex h-svh items-center overflow-hidden md:hidden">
+          <motion.div style={{ x: gallery2X, willChange: 'transform' }} className="flex w-max shrink-0 items-center gap-8 pr-[calc(50vw-150px)]">
+            <div className="flex h-svh w-screen shrink-0 items-center px-6">
+              <div className="max-w-[22rem]">
                 <span className="block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c]">Raumwirkung</span>
                 <h2 className="mt-3 font-[family-name:var(--font-sora)] text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-white">Veränderung<br />darf leise sein.</h2>
-                <p className="mt-4 font-[family-name:var(--font-dm-sans)] text-base leading-[1.7] text-[#9f9f8c]">Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.</p>
+                <p className="mt-5 font-[family-name:var(--font-dm-sans)] text-base leading-[1.7] text-[#b6b6a8]">Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.</p>
               </div>
             </div>
+            <div className="relative aspect-[3/4] w-[300px] shrink-0 overflow-hidden bg-white/5">
+              <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="300px" className="object-cover" />
+            </div>
+            <div className="relative aspect-[3/4] w-[300px] shrink-0 overflow-hidden bg-white/5">
+              <Image src="/Waschkuche.jpg" alt="Folierte Arbeitsplatte, sauber verlegt" fill sizes="300px" className="object-cover" />
+            </div>
+            <div className="relative aspect-[3/4] w-[300px] shrink-0 overflow-hidden bg-white/5">
+              <video src="/Verschonern3-silent.mp4" poster="/Verschonern3.jpg" aria-label="Video einer ausgeführten Innenraumarbeit" className="h-full w-full object-cover" controls preload="none" muted loop playsInline />
+            </div>
+          </motion.div>
+        </div>
 
-            {/* Gallery 2 Images */}
-            <div className="flex gap-6 md:gap-16 items-start justify-center shrink-0 w-full">
-              <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-0 shrink-0">
-                <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="sticky top-0 hidden h-screen overflow-hidden md:flex md:items-start">
+          <motion.div style={{ x: gallery2X, willChange: 'transform' }} className="flex w-[200vw] shrink-0 items-start gap-16">
+            <div className="flex w-full shrink-0 items-start justify-center gap-16">
+              <div className="relative aspect-[3/4] w-[500px] shrink-0 overflow-hidden bg-white/5 group">
+                <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-4 md:mt-6 shrink-0">
-                <Image src="/Waschkuche.jpg" alt="Folierte Arbeitsplatte, sauber verlegt" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="relative mt-6 aspect-[3/4] w-[500px] shrink-0 overflow-hidden bg-white/5 group">
+                <Image src="/Waschkuche.jpg" alt="Folierte Arbeitsplatte, sauber verlegt" fill sizes="500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-0 shrink-0 cursor-pointer" onClick={(e) => { const v = (e.currentTarget as HTMLDivElement).querySelector('video'); if (v && v.paused) v.play().catch(() => {}); }}>
-                <video src="/Verschonern3-silent.mp4" poster="/Verschonern3.jpg" aria-label="Video einer ausgeführten Innenraumarbeit" className="w-full h-full object-cover" controls preload="none" muted loop playsInline />
+              <div className="relative aspect-[3/4] w-[500px] shrink-0 overflow-hidden bg-white/5">
+                <video src="/Verschonern3-silent.mp4" poster="/Verschonern3.jpg" aria-label="Video einer ausgeführten Innenraumarbeit" className="h-full w-full object-cover" controls preload="none" muted loop playsInline />
               </div>
             </div>
-
           </motion.div>
         </div>
       </section>
 
       {/* Gallery 3 — Simple Horizontal Scroll */}
-      <section id="gallery3" className="relative bg-[#212121] py-24 md:py-32">
+      <section id="gallery3" className="relative bg-[#212121] py-32">
         <div className="mx-auto mb-16 w-full max-w-[1500px] px-6 md:mb-24 md:px-16">
           <span className="mb-8 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c] md:mb-12">
             Treppen &amp; Geländer
           </span>
           <div className="grid gap-10 md:grid-cols-[minmax(0,2.2fr)_minmax(18rem,0.8fr)] md:items-center md:gap-16">
-            <h2 className="max-w-5xl font-[family-name:var(--font-sora)] text-[clamp(3.25rem,7.4vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-white">
+            <h2 className="max-w-5xl font-[family-name:var(--font-sora)] text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-white md:text-[clamp(3.25rem,7.4vw,7.5rem)] md:leading-[0.9]">
               Übergänge, die alles zusammenhalten.
             </h2>
             <div className="border-l border-white/20 pl-6 pr-14 md:pl-8 md:pr-16">
@@ -1101,26 +1169,26 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-3 overflow-hidden px-4 pb-8 sm:gap-4 sm:px-6 md:gap-8 md:px-8">
-          <div className="w-[calc((100vw-3.5rem)/3)] sm:w-[calc((100vw-5rem)/3)] md:w-[min(27vw,350px)] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-6 md:mt-0 shrink-0">
-            <Image src="/Treppenhaus1.jpg" alt="Handwerklich bearbeitetes Treppenhaus" fill sizes="(max-width: 768px) 33vw, 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div className="w-[calc((100vw-3.5rem)/3)] sm:w-[calc((100vw-5rem)/3)] md:w-[min(27vw,350px)] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-6 md:mt-8 shrink-0">
-            <Image src="/Treppenhaus2.jpg" alt="Treppengeländer mit sauber ausgeführten Anschlüssen" fill sizes="(max-width: 768px) 33vw, 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
-          <div className="w-[calc((100vw-3.5rem)/3)] sm:w-[calc((100vw-5rem)/3)] md:w-[min(27vw,350px)] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-6 md:mt-0 shrink-0">
-            <Image src="/Treppenhaus3.jpg" alt="Detailansicht einer Treppenarbeit" fill sizes="(max-width: 768px) 33vw, 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-          </div>
+        <div className="flex flex-col items-center gap-14 overflow-hidden px-6 pb-8 md:flex-row md:justify-center md:gap-8 md:px-8">
+          <motion.div initial={reduceMotion ? false : { opacity: 0, y: 44 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }} className="relative mt-6 aspect-[3/4] w-full shrink-0 overflow-hidden bg-white/5 group md:mt-0 md:w-[min(27vw,350px)]">
+            <Image src="/Treppenhaus1.jpg" alt="Handwerklich bearbeitetes Treppenhaus" fill sizes="(max-width: 768px) calc(100vw - 3rem), 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+          </motion.div>
+          <motion.div initial={reduceMotion ? false : { opacity: 0, y: 44 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }} className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-white/5 group md:mt-8 md:w-[min(27vw,350px)]">
+            <Image src="/Treppenhaus2.jpg" alt="Treppengeländer mit sauber ausgeführten Anschlüssen" fill sizes="(max-width: 768px) calc(100vw - 3rem), 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+          </motion.div>
+          <motion.div initial={reduceMotion ? false : { opacity: 0, y: 44 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }} className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-white/5 group md:mt-0 md:w-[min(27vw,350px)]">
+            <Image src="/Treppenhaus3.jpg" alt="Detailansicht einer Treppenarbeit" fill sizes="(max-width: 768px) calc(100vw - 3rem), 350px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+          </motion.div>
         </div>
       </section>
 
       {/* Gallery 4 — Sticky Horizontal Scroll */}
-      <section id="gallery4" ref={gallery4Ref} className="relative h-[300svh] bg-[#212121]">
-        <div className="sticky top-0 h-svh overflow-hidden flex items-start md:h-screen">
-          <motion.div style={{ x: gallery4X }} className="flex gap-8 md:gap-16 shrink-0 pr-16 md:pr-32 w-[300vw] md:w-[250vw]">
+      <section id="gallery4" ref={gallery4Ref} className="relative h-[420svh] bg-[#212121] md:h-[300svh]">
+        <div className="sticky top-0 flex h-svh items-start overflow-hidden pt-20 md:h-screen md:pt-0">
+          <motion.div style={{ x: gallery4X, willChange: 'transform' }} className="flex w-max shrink-0 gap-8 md:w-[250vw] md:gap-16 md:pr-32">
             
             {/* Intro Panel */}
-            <div className="flex h-svh w-screen shrink-0 items-start px-6 pt-20 md:h-screen md:px-16 md:pt-32">
+            <div className="flex h-[calc(100svh-5rem)] w-screen shrink-0 items-start px-6 md:h-screen md:px-16 md:pt-32">
               <div className="mx-auto w-full max-w-[1500px]">
                 <span className="mb-8 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c] md:mb-12">
                   Akustikpaneele
@@ -1139,7 +1207,7 @@ export default function Home() {
             </div>
 
             {/* Gallery 4 Images */}
-            <div className="flex gap-8 md:gap-16 items-start shrink-0 pr-16 md:pr-32">
+            <div className="flex shrink-0 items-start gap-8 pr-[calc(50vw-150px)] md:gap-16 md:pr-32">
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-8 md:mt-0 shrink-0">
                 <Image src="/Akustik1.png" alt="Montierte Akustikpaneele im Innenraum" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 300px, 500px" />
               </div>
@@ -1426,7 +1494,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-2">
           <p className="text-[#9f9f8c] text-sm text-center">© 2026 Thomas Frenzel. Alle Rechte vorbehalten.</p>
           <p className="text-[#9f9f8c] text-sm text-center">
-            Made in the Lab: <a href="https://www.greenlabz-studio.de/" target="_blank" rel="noopener noreferrer" className="text-[#9f9f8c] hover:text-white transition-colors">Green Labz Studio</a>.
+            Made in the Lab: <a href="https://www.greenlabz-studio.de/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#00d084] via-[#39e5a1] to-[#a8f1d5] bg-clip-text text-transparent transition-opacity hover:opacity-80">Green Labz Studio</a>.
           </p>
         </div>
       </footer>

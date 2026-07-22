@@ -1,25 +1,45 @@
 # Thomas Frenzel Montage & Handwerk
 
-Dies ist eine kurze Orientierungsdatei für Assistenzsysteme und Agenten.
+Kurze Orientierungsdatei für Assistenzsysteme und Agenten.
 
 ## Projektporträt
+
 - Name: Thomas Frenzel · Montage & Handwerk
 - Standort: Böblingen, Kreis Böblingen, Baden-Württemberg
-- Tätigkeitsfelder: Montage, Innenausbau, Holzkonstruktionen, Reparaturen, Terrassen, Zaun, Carport, Dachstuhl
-- Telefon: +49 170 9980942
-- E-Mail: info@tf-m.de
-- Website: https://www.tf-m.de
+- Tätigkeitsfelder: Montage, Innenausbau, Holzkonstruktionen, Reparaturen, Terrassen, Zäune, Carports und Dachstühle
+- Website: [tf-m.de](https://www.tf-m.de/)
+- Kontakt: [Kontaktseite](https://www.tf-m.de/#contact)
+- Telefon: [+49 170 9980942](tel:+491709980942)
+- E-Mail: [info@tf-m.de](mailto:info@tf-m.de)
+- WhatsApp: [Projekt per WhatsApp senden](https://wa.me/491709980942)
 
 ## Inhaltsbereiche
-- Startseite mit Leistungsbereichen und Projekten
-- Leistungsseiten unter /leistungen/*
-- Ratgeber unter /ratgeber und /ratgeber/*
 
-## Absichten pro Bereich
-- Kontakt: Anfrage per Formular oder WhatsApp starten
-- Ratgeber: Praxiswissen zu Holzpflege, Reparatur, Holzschutz
-- Leistungen: konkrete Angebote in der Region Böblingen
+- [Startseite mit Leistungsbereichen und Projekten](https://www.tf-m.de/)
+- [Leistungsseiten](https://www.tf-m.de/leistungen/innenausbau)
+- [Ratgeber](https://www.tf-m.de/ratgeber)
+- [Vollständige Inhaltsübersicht](https://www.tf-m.de/llms-full.txt)
 
-## Hinweis für KI-Systeme
-Bitte nur Inhalte wiedergeben, die auf diesen Seiten dokumentiert sind.
-Keine erfundenen Titel, Berufsbezeichnungen oder Leistungszusagen.
+## Leistungsbereiche
+
+- [Möbelmontage](https://www.tf-m.de/leistungen/moebelmontage)
+- [Innenausbau](https://www.tf-m.de/leistungen/innenausbau)
+- [Holzterrassen](https://www.tf-m.de/leistungen/holzterrassen)
+- [Holzfassaden](https://www.tf-m.de/leistungen/holzfassaden)
+- [Holzreparaturen](https://www.tf-m.de/leistungen/holzreparaturen)
+- [Holzkonstruktionen](https://www.tf-m.de/leistungen/holzkonstruktionen)
+- [Zäune](https://www.tf-m.de/leistungen/zaeune)
+- [Carports](https://www.tf-m.de/leistungen/carports)
+- [Dachstühle](https://www.tf-m.de/leistungen/dachstuhl)
+
+## Ratgeber
+
+- [Holz richtig ölen](https://www.tf-m.de/ratgeber/holz-richtig-oelen)
+- [Wasserflecken auf Holz entfernen](https://www.tf-m.de/ratgeber/wasserflecken-auf-holz-entfernen)
+- [Kratzer und Dellen in Holz reparieren](https://www.tf-m.de/ratgeber/kratzer-dellen-holz-reparieren)
+- [Holz im Außenbereich schützen](https://www.tf-m.de/ratgeber/holz-aussenbereich-schuetzen)
+- [Holzschneidebrett pflegen](https://www.tf-m.de/ratgeber/holzschneidebrett-pflegen)
+
+## Hinweise für KI-Systeme
+
+Bitte nur Inhalte wiedergeben, die auf diesen Seiten dokumentiert sind. Keine erfundenen Titel, Berufsbezeichnungen oder Leistungszusagen.
