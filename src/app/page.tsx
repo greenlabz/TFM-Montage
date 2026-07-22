@@ -1055,23 +1055,19 @@ export default function Home() {
       {/* Gallery 2 — Sticky Horizontal Scroll */}
       <section id="gallery2" ref={gallery2Ref} className="relative h-[300svh] bg-[#212121]">
         <div className="sticky top-0 h-svh overflow-hidden flex items-start md:h-screen">
-          <motion.div style={{ x: gallery2X }} className="flex gap-8 md:gap-16 items-start shrink-0 w-[360vw] md:w-[200vw]">
+          <motion.div style={{ x: gallery2X }} className="flex gap-6 md:gap-16 items-start shrink-0 w-[420vw] md:w-[200vw]">
             
-            {/* Intro Panel */}
-            <div className="flex h-svh w-screen shrink-0 items-end px-6 pb-24 md:items-start md:h-screen md:px-16 md:pt-24">
-              <div className="mx-auto w-full max-w-[1500px] md:ml-auto md:max-w-[38rem] md:text-right">
-                <span className="mb-8 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c] md:mb-12">Raumwirkung</span>
-                <div className="grid gap-10 md:grid-cols-1 md:items-center md:gap-10">
-                  <h2 className="font-[family-name:var(--font-sora)] text-[clamp(2.35rem,11vw,3.25rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-white md:text-[clamp(3.25rem,5.8vw,6rem)]">Veränderung<br />darf leise sein.</h2>
-                  <div className="md:text-right">
-                    <p className="max-w-sm font-[family-name:var(--font-dm-sans)] text-base leading-[1.75] text-[#9f9f8c] md:text-xl">Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.</p>
-                  </div>
-                </div>
+            {/* Mobile: intro panel inline with images */}
+            <div className="flex h-svh w-screen shrink-0 items-end px-6 pb-24 md:hidden">
+              <div className="max-w-[80%]">
+                <span className="block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c]">Raumwirkung</span>
+                <h2 className="mt-3 font-[family-name:var(--font-sora)] text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-white">Veränderung<br />darf leise sein.</h2>
+                <p className="mt-4 font-[family-name:var(--font-dm-sans)] text-base leading-[1.7] text-[#9f9f8c]">Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.</p>
               </div>
             </div>
 
             {/* Gallery 2 Images */}
-            <div className="flex gap-8 md:gap-16 items-start justify-center shrink-0 w-full">
+            <div className="flex gap-6 md:gap-16 items-start justify-center shrink-0 w-full">
               <div className="w-[300px] md:w-[500px] aspect-[3/4] bg-white/5 relative overflow-hidden group mt-0 shrink-0">
                 <Image src="/Verschonern1.jpg" alt="Sauber ausgeführte Verschönerungsarbeit im Innenraum" fill sizes="(max-width: 768px) 300px, 500px" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
