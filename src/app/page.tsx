@@ -1055,22 +1055,16 @@ export default function Home() {
       {/* Gallery 2 — Sticky Horizontal Scroll */}
       <section id="gallery2" ref={gallery2Ref} className="relative h-[300svh] bg-[#212121]">
         <div className="sticky top-0 h-svh overflow-hidden flex items-start md:h-screen">
-          <motion.div style={{ x: gallery2X }} className="flex gap-8 md:gap-16 items-start justify-center shrink-0 w-[360vw] md:w-[200vw]">
+          <motion.div style={{ x: gallery2X }} className="flex gap-8 md:gap-16 items-start shrink-0 w-[360vw] md:w-[200vw]">
             
             {/* Intro Panel */}
-            <div className="flex h-svh w-screen shrink-0 items-start px-6 pt-20 md:h-screen md:px-16 md:pt-24">
-              <div className="mx-auto w-full max-w-[1500px]">
-                <span className="mb-8 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c] md:mb-12">
-                  Raumwirkung
-                </span>
-                <div className="grid gap-10 md:translate-x-48 md:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.55fr)] md:items-center md:gap-10 xl:translate-x-64">
-                  <h2 className="max-w-4xl font-[family-name:var(--font-sora)] text-[clamp(2.35rem,12vw,3.25rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-white md:translate-x-80 md:text-[clamp(3.25rem,5.8vw,6rem)] xl:translate-x-[38rem]">
-                    Veränderung<br />darf leise sein.
-                  </h2>
-                  <div className="border-l border-white/20 pl-6 pr-14 md:translate-x-80 md:pl-8 md:pr-16 xl:translate-x-[38rem]">
-                    <p className="max-w-sm font-[family-name:var(--font-dm-sans)] text-base leading-[1.75] text-[#9f9f8c] md:text-xl">
-                      Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.
-                    </p>
+            <div className="flex h-svh w-screen shrink-0 items-end px-6 pb-24 md:items-start md:h-screen md:px-16 md:pt-24">
+              <div className="mx-auto w-full max-w-[1500px] md:ml-auto md:max-w-[38rem] md:text-right">
+                <span className="mb-8 block font-[family-name:var(--font-dm-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#9f9f8c] md:mb-12">Raumwirkung</span>
+                <div className="grid gap-10 md:grid-cols-1 md:items-center md:gap-10">
+                  <h2 className="font-[family-name:var(--font-sora)] text-[clamp(2.35rem,11vw,3.25rem)] font-semibold leading-[0.94] tracking-[-0.05em] text-white md:text-[clamp(3.25rem,5.8vw,6rem)]">Veränderung<br />darf leise sein.</h2>
+                  <div className="md:text-right">
+                    <p className="max-w-sm font-[family-name:var(--font-dm-sans)] text-base leading-[1.75] text-[#9f9f8c] md:text-xl">Wenige gezielte Eingriffe reichen oft, damit ein Raum ruhiger, klarer und wieder stimmig wirkt.</p>
                   </div>
                 </div>
               </div>
