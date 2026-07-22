@@ -668,7 +668,7 @@ export default function Home() {
         {isLoading && (
           <motion.div 
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, y: "-10%" }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 z-[100] bg-white flex items-center justify-center"
           >
@@ -877,12 +877,6 @@ export default function Home() {
             <source src="/hero-intro-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
             <source src="/hero-intro.mp4" type="video/mp4" />
           </video>
-          <motion.div
-            initial={false}
-            animate={{ opacity: isHeroRevealed ? 1 : 0 }}
-            transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 bg-white/60"
-          />
         </div>
         
         <motion.div 
