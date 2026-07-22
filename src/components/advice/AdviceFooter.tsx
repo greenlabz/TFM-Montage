@@ -6,7 +6,7 @@ export default function AdviceFooter() {
     <footer className="advice-footer">
       <div className="advice-footer-main">
         <div>
-          <Image src="/Tom Logo.png" alt="Thomas Frenzel Montage und Handwerk" width={190} height={64} style={{ width: "auto", height: "auto" }} />
+          <Image src="/Tom Logo.webp" alt="Thomas Frenzel Montage und Handwerk" width={190} height={64} style={{ width: "auto", height: "auto" }} />
           <p>Handwerk, Montage und Holzarbeiten im Kreis Böblingen.</p>
         </div>
         <div>

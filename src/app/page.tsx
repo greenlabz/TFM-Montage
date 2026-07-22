@@ -342,7 +342,7 @@ function AssembledFooterLogo({ reduceMotion }: { reduceMotion: boolean }) {
         className="absolute inset-0"
         style={{ clipPath: 'inset(0 50% 0 0)' }}
       >
-        <Image src="/Tom Logo.png" alt="" fill className="object-contain object-center" sizes="(max-width: 768px) 240px, 288px" />
+        <Image src="/Tom Logo.webp" alt="" fill className="object-contain object-center" sizes="(max-width: 768px) 240px, 288px" />
       </motion.div>
       <motion.div
         initial={rightInitial}
@@ -351,7 +351,7 @@ function AssembledFooterLogo({ reduceMotion }: { reduceMotion: boolean }) {
         className="absolute inset-0"
         style={{ clipPath: 'inset(0 0 0 50%)' }}
       >
-        <Image src="/Tom Logo.png" alt="" fill className="object-contain object-center" sizes="(max-width: 768px) 240px, 288px" />
+        <Image src="/Tom Logo.webp" alt="" fill className="object-contain object-center" sizes="(max-width: 768px) 240px, 288px" />
       </motion.div>
       {!reduceMotion && (
         <motion.span
@@ -732,7 +732,7 @@ Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen 
               transition={{ duration: 0.55, ease: "easeOut" }}
               className="relative w-[40rem] h-[40rem] md:w-[56rem] md:h-[56rem]"
             >
-              <Image src="/Tom Logo.png" alt="Tom Logo" fill className="object-contain" priority loading="eager" sizes="(max-width: 768px) 640px, 896px" />
+              <Image src="/Tom Logo.webp" alt="Tom Logo" fill className="object-contain" priority loading="eager" sizes="(max-width: 768px) 640px, 896px" />
             </motion.div>
           </motion.div>
         )}
@@ -767,7 +767,7 @@ Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen 
           className={`pointer-events-auto mx-auto flex items-center justify-between transition-[background-color,border-color,border-radius,box-shadow,color] duration-500 ease-out ${
             isNavCollapsed
               ? 'mt-4 w-[min(17rem,calc(100vw-2rem))] rounded-full border border-[#3f6f6b]/70 bg-[#181818] px-3 py-2 shadow-[0_18px_45px_-18px_rgba(0,0,0,0.72)]'
-              : `w-full max-w-[1500px] px-4 py-4 md:px-8 ${isLightSection ? 'text-black' : 'text-white'}`
+              : `w-full max-w-[1500px] px-4 py-4 md:px-8 ${isLightSection ? 'text-[#606762]' : 'text-white'}`
           }`}
         >
           <motion.div
@@ -776,7 +776,7 @@ Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen 
             className={`relative shrink-0 ${isNavCollapsed ? 'h-11 w-28' : 'h-20 w-64 md:h-24 md:w-80'}`}
           >
             <Image
-              src="/Tom Logo.png"
+              src="/Tom Logo.webp"
               alt="Tom Logo"
               fill
               className={`object-contain object-left transition-[filter] duration-200 ${isNavCollapsed ? 'brightness-0 invert' : ''}`}
@@ -1608,7 +1608,7 @@ Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen 
               <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
             </div>
             <div className="flex gap-4 mt-4 text-[#9f9f8c] justify-end">
-              <span className="hover:text-white transition-colors cursor-pointer">Instagram</span>
+              <a href="https://www.instagram.com/tfmontage/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
             </div>
           </div>
         </div>

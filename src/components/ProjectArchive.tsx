@@ -241,7 +241,20 @@ export default function ProjectArchive() {
           </div>
 
           <div className="mt-24 flex flex-col items-start justify-between gap-8 border-t border-white/12 pt-10 md:flex-row md:items-center">
-            <p className="max-w-xl text-base leading-relaxed text-white/60">Ein Foto reicht für den ersten Schritt. Ich prüfe, was möglich und sinnvoll ist.</p>
+            <p className="max-w-xl text-base leading-relaxed text-white/60">
+              <span className="relative inline-block text-white/80">
+                Ein Foto reicht für den ersten Schritt.
+                <motion.span
+                  aria-hidden="true"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute -bottom-1 left-0 h-px w-full origin-left bg-[#9f9f8c]"
+                />
+              </span>{' '}
+              Ich prüfe, was möglich und sinnvoll ist.
+            </p>
             <a
               href="https://wa.me/491709980942?text=Hallo%20Thomas%2C%20ich%20m%C3%B6chte%20dir%20ein%20Foto%20von%20meinem%20Projekt%20schicken."
               target="_blank"

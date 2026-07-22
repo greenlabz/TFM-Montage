@@ -142,7 +142,7 @@ export default function ContactModal({ isOpen, onClose, origin }: ContactModalPr
 
             <div className="mx-auto mb-2 h-11 w-32 sm:mb-3 sm:h-14 sm:w-40">
               <div className="relative h-full w-full">
-                <Image src="/Tom Logo.png" alt="Thomas Frenzel Montage" fill className="object-contain brightness-0 invert opacity-90" sizes="192px" />
+            <Image src="/Tom Logo.webp" alt="Thomas Frenzel Montage" fill className="object-contain brightness-0 invert opacity-90" sizes="192px" />
               </div>
             </div>
 

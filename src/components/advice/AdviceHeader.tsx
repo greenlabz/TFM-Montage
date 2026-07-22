@@ -5,7 +5,7 @@ export default function AdviceHeader() {
   return (
     <header className="advice-header">
       <Link href="/" className="advice-logo" aria-label="TFM Startseite">
-        <Image src="/Tom Logo.png" alt="Thomas Frenzel Montage und Handwerk" width={168} height={56} style={{ width: "auto", height: "auto" }} priority loading="eager" />
+      <Image src="/Tom Logo.webp" alt="Thomas Frenzel Montage und Handwerk" width={168} height={56} style={{ width: "auto", height: "auto" }} priority loading="eager" />
       </Link>
       <nav aria-label="Hauptnavigation">
         <Link href="/#gallery">Arbeiten</Link>
