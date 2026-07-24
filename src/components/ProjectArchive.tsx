@@ -47,7 +47,7 @@ const projects = [
   {
     id: 'kellerausbau',
     image: '/projekt-keller.png',
-    title: 'Kellerausbau mit klarer Raumaufteilung',
+    title: 'Montage von Kellerabteil',
     category: 'Innenausbau',
     detail: 'Passgenaue Holzabtrennungen nutzen den vorhandenen Raum sinnvoll aus.',
     layout: 'md:col-span-7',
@@ -79,15 +79,6 @@ const projects = [
     detail: 'Massive Holzstufen präzise auf der Stahlkonstruktion ausgerichtet.',
     layout: 'md:col-span-4',
     aspect: 'aspect-[4/5]'
-  },
-  {
-    id: 'kellerausbau',
-    image: '/projekt-keller.png',
-    title: 'Kellerausbau mit klarer Raumaufteilung',
-    category: 'Innenausbau',
-    detail: 'Passgenaue Holzabtrennungen nutzen den vorhandenen Raum sinnvoll aus.',
-    layout: 'md:col-span-7',
-    aspect: 'aspect-[16/10]'
   },
 ] as const;
 
