@@ -637,26 +637,10 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: `Absolut empfehlenswert! TFM hat unseren Keller verwandelt! ⭐⭐⭐⭐⭐
-
-Wir haben nach einem zuverlässigen Handwerker für unseren Kellerausbau im Kreis Böblingen gesucht und sind auf Thomas von TFM gestoßen – eine absolut goldrichtige Entscheidung!
-
-Unser Ziel war es, den alten Nutzkeller in modernen Wohnraum (Gästezimmer & Homeoffice) umzubauen. Thomas (TFM) hat uns von der ersten Beratung im Raum Böblingen / Sindelfingen über die Detailplanung bis hin zur perfekten Umsetzung hervorragend begleitet.
-
-Was uns besonders begeistert hat:
-
-Höchste Qualität: Saubere Arbeit bei Trockenbau, Wändedämmung und Bodenverlegung.
-
-Verlässlichkeit & Termintreue: Keine bösen Überraschungen bei Kosten oder Zeitplan – Absprachen werden zu 100 % eingehalten.
-
-Lokale Expertise: Thomas kennt die baulichen Besonderheiten bei Kellersanierungen in der Region (Feuchtigkeitsschutz, Dämmung, Belüftung) genau.
-
-Wer im Kreis Böblingen (egal ob Böblingen, Sindelfingen, Leonberg oder Herrenberg) einen Fachmann für Kellerausbau, Kellersanierung oder Wohnraumerweiterung sucht, ist bei Thomas (TFM) in den besten Händen. Unkompliziert, sauber, fair und fachlich top.
-
-Vielen Dank, Thomas, für die tolle Arbeit! Wir nutzen unseren neuen Keller jetzt mit Freude jeden Tag!`,
+      quote: `Herr Frenzel hat bei mir in Weil im Schönbuch eine Zimmertür inklusive Zarge ausgetauscht – das Ergebnis ist absolut perfekt! Die Tür sitzt schnurgerade, schleift nicht und schließt butterweich. Die alte Tür wurde fachgerecht demontiert und der Arbeitsbereich blitzblank hinterlassen. Herr Frenzel arbeitet zügig, strukturiert und mit Profi-Werkzeug. Ein klasse Schreiner- und Montageservice für Weil im Schönbuch und die umliegende Region im Kreis Böblingen. Gerne wieder beim nächsten Projekt!`,
       name: 'Roja R.',
-      location: 'Böblingen / Sindelfingen',
-      initials: 'KB'
+      location: 'Weil im Schönbuch',
+      initials: 'RR'
     },
     {
       quote: `Perfekter Partner für Büroumbau im Kreis Böblingen
