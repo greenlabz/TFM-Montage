@@ -575,12 +575,6 @@ export default function Home() {
   useEffect(() => {
     if (isLoading) return;
 
-    // Auf Mobilgeräten sofort den Hero aktivieren, damit die Text-Animation direkt flüssig nach dem Logo startet
-    if (typeof window !== 'undefined' && window.innerWidth < 768) {
-      setIsHeroRevealed(true);
-      return;
-    }
-
     const video = heroVideoRef.current;
     if (!video) {
       setIsHeroRevealed(true);
@@ -599,10 +593,12 @@ export default function Home() {
       return () => video.removeEventListener('loadedmetadata', revealStaticHero);
     }
 
-    video.currentTime = 0;
     video.defaultPlaybackRate = 0.82;
     video.playbackRate = 0.82;
-    void video.play().catch(() => setIsHeroRevealed(true));
+    const promise = video.play();
+    if (promise !== undefined) {
+      promise.catch(() => setIsHeroRevealed(true));
+    }
   }, [isLoading, reduceMotion]);
 
   useEffect(() => {
@@ -893,8 +889,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <video
             ref={heroVideoRef}
-            className="h-full w-full object-cover object-[42%_center] md:object-center"
+            className="h-full w-full object-cover object-[42%_center] md:object-center bg-white"
             muted
+            autoPlay
             playsInline
             preload="auto"
             poster="/hero-tfm.webp"
@@ -904,7 +901,7 @@ export default function Home() {
               event.currentTarget.playbackRate = 0.82;
             }}
             onTimeUpdate={(event) => {
-              if (!isHeroRevealed && event.currentTarget.currentTime >= 2.45) {
+              if (!isHeroRevealed && event.currentTarget.currentTime >= 2.0) {
                 event.currentTarget.pause();
                 setIsHeroRevealed(true);
               }
