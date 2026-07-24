@@ -643,13 +643,7 @@ export default function Home() {
       initials: 'RR'
     },
     {
-      quote: `Perfekter Partner für Büroumbau im Kreis Böblingen
-
-Für den Umbau und die Neugestaltung unserer neuen Büroräume im Kreis Böblingen haben wir Thomas von TFM beauftragt – und das Ergebnis hat unsere Erwartungen absolut übertroffen! Aus einer in die Jahre gekommenen Fläche hat Thomas ein modernes, funktionales und optisch ansprechendes Büro geschaffen. Von der durchdachten Neuaufteilung der Räume über saubere Trockenbauarbeiten bis hin zur fachgerechten Ausführung der Boden- und Wandgestaltungen lief alles reibungslos.
-
-Besonders beeindruckt hat uns die termingenaue Umsetzung, die für unseren pünktlichen Büro-Einzug und den reibungslosen Betriebsstart entscheidend war. Thomas arbeitet extrem professionell, denkt aktiv mit und hinterlässt die Baustelle stets sauber.
-
-Für Unternehmen und Gewerbetreibende im Kreis Böblingen – wie Böblingen, Sindelfingen, Leonberg oder Holzgerlingen –, die eine professionelle Bürorenovierung, Gewerbesanierung oder Raumumgestaltung suchen, ist Thomas (TFM) die absolut erste Adresse. Herzlichen Dank, Thomas, für die großartige Arbeit und den perfekten Ablauf!`,
+      quote: `Herr Frenzel hat bei unserem Projekt hervorragende Arbeit geleistet. Der neue Vinylboden liegt perfekt eben, Übergänge und Sockelleisten sind sauber verarbeitet und das Tempo war wirklich stark. Pünktlich, freundlich und am Ende wurde alles blitzblank hinterlassen. Top Handwerker für den gesamten Kreis Böblingen! absolut empfehlenswert!`,
       name: 'Daniel K.',
       location: 'Böblingen',
       initials: 'DK'
