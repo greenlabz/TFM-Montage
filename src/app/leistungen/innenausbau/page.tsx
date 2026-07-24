@@ -27,6 +27,12 @@ export default function innenausbauPage() {
           { name: "Leistungen", url: "https://www.tf-m.de/#services" },
           { name: "Innenausbau mit Holz", url: `https://www.tf-m.de/leistungen/innenausbau` }
         ]}
+        service={{
+          name: "Innenausbau mit Holz",
+          description: "Individueller Innenausbau mit Holz: Wandverkleidungen, Decken und Einbauten im Kreis Böblingen.",
+          serviceType: "Innenausbau & Trockenbau",
+          url: "https://www.tf-m.de/leistungen/innenausbau"
+        }}
       />
       <div className="max-w-4xl mx-auto">
         <Link href="/" className="text-[#C49A6C] hover:text-[#a37e55] font-display uppercase tracking-widest text-xs mb-8 inline-block transition-colors">
@@ -35,11 +41,24 @@ export default function innenausbauPage() {
         <span className="font-display text-[#C49A6C] uppercase tracking-[0.3em] text-xs mb-4 block">Handwerkliche Leistungen</span>
         <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">Innenausbau mit Holz</h1>
         
-        <div className="prose prose-lg prose-p:text-[#6e6e73] prose-headings:text-[#1d1d1f] max-w-none mb-16">
+        <div className="prose prose-lg prose-p:text-[#6e6e73] prose-headings:text-[#1d1d1f] max-w-none mb-12">
           <p className="text-xl font-medium text-[#1d1d1f] mb-6">Holz bringt Wärme, Behaglichkeit und ein gesundes Raumklima in Ihr Zuhause. Für Kunden im Kreis Böblingen, Leonberg und Herrenberg übernehmen wir sämtliche Innenausbauarbeiten mit Holz, von Wandverkleidungen bis zur Deckenmontage.</p>
           <div className="whitespace-pre-line">Beim Innenausbau mit Holz sind Präzision und sauberes Arbeiten unerlässlich. Wir montieren hochwertige Holzdecken, Wandpaneele und Akustikelemente. Holzverkleidungen eignen sich hervorragend, um die Raumakustik zu verbessern, unschöne Leitungen zu verbergen oder einfach gestalterische Akzente zu setzen. Dabei arbeiten wir mit Massivholzprofilen, Echtholzfurnierplatten oder auch modernen Dekor-Paneelen.
 
 Darüber hinaus fertigen und montieren wir passgenaue Verkleidungen für Treppen, Heizkörper oder Nischen. Wenn der Dachboden ausgebaut werden soll, übernehmen wir die Beplankung der Dachschrägen und die Erstellung von Trennwänden in Holzständerbauweise. Jede Konstruktion wird auf die speziellen Gegebenheiten vor Ort angepasst, um ein perfektes Spaltmaß und nahtlose Übergänge zu garantieren.</div>
+        </div>
+
+        <div className="bg-[#252527] text-white rounded-3xl p-8 md:p-10 mb-12 shadow-sm">
+          <h3 className="font-display text-xl font-bold mb-3">Passendes Projekt & Ratgeber</h3>
+          <p className="text-white/80 text-sm mb-6">Sieh dir unser Referenzprojekt oder nützliche Praxistipps im Holz-Ratgeber an.</p>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/#portfolio" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-full text-xs font-display uppercase tracking-widest transition-colors">
+              Projekt: Montage von Kellerabteil &rarr;
+            </Link>
+            <Link href="/ratgeber" className="inline-flex items-center gap-2 bg-[#9FA28F] hover:bg-[#8b8e7c] text-white px-5 py-3 rounded-full text-xs font-display uppercase tracking-widest transition-colors">
+              Holz-Ratgeber lesen &rarr;
+            </Link>
+          </div>
         </div>
 
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-black/5">

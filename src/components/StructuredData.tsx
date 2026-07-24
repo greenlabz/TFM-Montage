@@ -10,9 +10,25 @@ type BreadcrumbItem = {
   url: string;
 };
 
+type ReviewItem = {
+  author: string;
+  reviewBody: string;
+  reviewRating: number;
+  location?: string;
+};
+
+type ServiceItem = {
+  name: string;
+  description: string;
+  serviceType: string;
+  url: string;
+};
+
 type StructuredDataProps = {
   faq?: FAQItem[];
   breadcrumb?: BreadcrumbItem[];
+  reviews?: ReviewItem[];
+  service?: ServiceItem;
   localBusiness?: {
     name: string;
     description: string;
@@ -30,11 +46,11 @@ type StructuredDataProps = {
   };
 };
 
-export default function StructuredData({ faq, breadcrumb, localBusiness, person }: StructuredDataProps) {
+export default function StructuredData({ faq, breadcrumb, reviews, service, localBusiness, person }: StructuredDataProps) {
   const schemas: Record<string, unknown>[] = [];
 
   if (localBusiness) {
-    schemas.push({
+    const businessSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "@id": "https://www.tf-m.de/#business",
@@ -92,10 +108,43 @@ export default function StructuredData({ faq, breadcrumb, localBusiness, person 
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "3",
+        "reviewCount": reviews && reviews.length > 0 ? String(reviews.length) : "3",
         "bestRating": "5",
         "worstRating": "1"
       }
+    };
+
+    if (reviews && reviews.length > 0) {
+      businessSchema["review"] = reviews.map(r => ({
+        "@type": "Review",
+        "author": { "@type": "Person", "name": r.author },
+        "reviewBody": r.reviewBody,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": r.reviewRating,
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }));
+    }
+
+    schemas.push(businessSchema);
+  }
+
+  if (service) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": service.name,
+      "description": service.description,
+      "serviceType": service.serviceType,
+      "url": service.url,
+      "provider": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "TFM Montage & Handwerk",
+        "url": "https://www.tf-m.de"
+      },
+      "areaServed": ["Böblingen", "Sindelfingen", "Herrenberg", "Leonberg", "Weil im Schönbuch", "Kreis Böblingen"]
     });
   }
 

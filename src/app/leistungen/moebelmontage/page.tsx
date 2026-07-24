@@ -27,6 +27,12 @@ export default function moebelmontagePage() {
           { name: "Leistungen", url: "https://www.tf-m.de/#services" },
           { name: "Möbelmontage & kleiner Möbelbau", url: `https://www.tf-m.de/leistungen/moebelmontage` }
         ]}
+        service={{
+          name: "Möbelmontage & kleiner Möbelbau",
+          description: "Zuverlässiger Aufbau von Möbeln, Schränken und Regalsystemen im Kreis Böblingen.",
+          serviceType: "Möbelmontage & Handwerk",
+          url: "https://www.tf-m.de/leistungen/moebelmontage"
+        }}
       />
       <div className="max-w-4xl mx-auto">
         <Link href="/" className="text-[#C49A6C] hover:text-[#a37e55] font-display uppercase tracking-widest text-xs mb-8 inline-block transition-colors">
@@ -35,11 +41,24 @@ export default function moebelmontagePage() {
         <span className="font-display text-[#C49A6C] uppercase tracking-[0.3em] text-xs mb-4 block">Handwerkliche Leistungen</span>
         <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">Möbelmontage & kleiner Möbelbau</h1>
         
-        <div className="prose prose-lg prose-p:text-[#6e6e73] prose-headings:text-[#1d1d1f] max-w-none mb-16">
+        <div className="prose prose-lg prose-p:text-[#6e6e73] prose-headings:text-[#1d1d1f] max-w-none mb-12">
           <p className="text-xl font-medium text-[#1d1d1f] mb-6">Ein fehlerfreier Aufbau sorgt für langlebige und sicher funktionierende Möbel. Wir bieten professionelle Möbelmontage für Privat- und Gewerbekunden in Böblingen, Sindelfingen, Schönaich und Umgebung an.</p>
           <div className="whitespace-pre-line">Der Aufbau komplexer Kleiderschränke, Büromöbelsysteme oder individuell geplanter Regale kann schnell zur Herausforderung werden. Wir übernehmen die fachgerechte Montage von Systemmöbeln namhafter Hersteller. Dazu gehört das präzise Ausrichten der Korpusse, das Einstellen der Scharniere und Spaltmaße sowie die sichere und verdeckte Wandbefestigung (Kippsicherung).
 
 Neben der reinen Montage von Fertigmöbeln realisieren wir auch kleine Möbelbauprojekte und individuelle Anpassungen. Wenn Standardmaße nicht passen, schneiden wir Deckplatten, Passleisten oder Regalböden millimetergenau zu. Auch der Einbau von Schiebetüren in Nischen oder das Nachrüsten von Schubladenauszügen und Dämpfern (Soft-Close-Systeme) gehört zu unserem Leistungsspektrum. Sauberkeit, Vorsicht im Umgang mit den Bauteilen und eine besenreine Übergabe sind für uns selbstverständlich.</div>
+        </div>
+
+        <div className="bg-[#252527] text-white rounded-3xl p-8 md:p-10 mb-12 shadow-sm">
+          <h3 className="font-display text-xl font-bold mb-3">Passendes Projekt & Ratgeber</h3>
+          <p className="text-white/80 text-sm mb-6">Sieh dir Kundenbewertungen zur Möbelmontage oder nützliche Holz-Tipps an.</p>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/#portfolio" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-full text-xs font-display uppercase tracking-widest transition-colors">
+              Kundenbeispiele & Bewertungen &rarr;
+            </Link>
+            <Link href="/ratgeber" className="inline-flex items-center gap-2 bg-[#9FA28F] hover:bg-[#8b8e7c] text-white px-5 py-3 rounded-full text-xs font-display uppercase tracking-widest transition-colors">
+              Holz-Ratgeber lesen &rarr;
+            </Link>
+          </div>
         </div>
 
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-black/5">

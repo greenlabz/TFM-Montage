@@ -669,15 +669,21 @@ export default function Home() {
         breadcrumb={[
           { name: 'Start', url: 'https://www.tf-m.de/' }
         ]}
+        reviews={testimonials.map(t => ({
+          author: t.name,
+          reviewBody: t.quote,
+          reviewRating: 5,
+          location: t.location
+        }))}
         localBusiness={{
           name: 'Thomas Frenzel · Montage & Handwerk',
           description: 'Handwerker für Montage, Innenausbau und Holzarbeiten im Kreis Böblingen — persönlich, fachlich, regional.',
           telephone: '+49 170 9980942',
           email: 'info@tf-m.de',
-          streetAddress: 'Hanns-Weisel-Platz 9',
-          postalCode: '40599',
-          addressLocality: 'Düsseldorf',
-          addressRegion: 'Nordrhein-Westfalen',
+          streetAddress: 'Hohenstaufenstr. 12',
+          postalCode: '71032',
+          addressLocality: 'Böblingen',
+          addressRegion: 'Baden-Württemberg',
           addressCountry: 'DE'
         }}
         person={{
