@@ -575,6 +575,12 @@ export default function Home() {
   useEffect(() => {
     if (isLoading) return;
 
+    // Auf Mobilgeräten sofort den Hero aktivieren, damit die Text-Animation direkt flüssig nach dem Logo startet
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      setIsHeroRevealed(true);
+      return;
+    }
+
     const video = heroVideoRef.current;
     if (!video) {
       setIsHeroRevealed(true);
