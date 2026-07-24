@@ -1459,7 +1459,7 @@ Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen 
       </section>
 
       {/* Lead Magnet — Kostenlose Holzpflegeanleitung */}
-      <section ref={leadMagnetRef} className="relative bg-[#9FA28F] py-24 md:py-32 border-t border-white/5">
+      <section id="praxisbuch" ref={leadMagnetRef} className="relative bg-[#9FA28F] py-24 md:py-32 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
