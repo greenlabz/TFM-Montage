@@ -649,15 +649,9 @@ export default function Home() {
       initials: 'DK'
     },
     {
-      quote: `Reparatur von Türen (TFM) überzeugt auf ganzer Linie!
-
-Wir hatten Thomas von TFM ursprünglich nur für die Reparatur unserer Türen in unserer Sindelfinger Wohnung angefragt. Wenn Türen klemmen, nicht mehr richtig schließen oder Abnutzungserscheinungen zeigen, braucht man einfach jemanden mit dem richtigen Blick fürs Detail. Thomas hat die Arbeiten extrem präzise, sauber und fachgerecht durchgeführt. Die Türen lassen sich wieder einwandfrei und wie am ersten Tag bedienen.
-
-Von dieser schnellen, unkomplizierten und handwerklich perfekten Arbeit waren wir so begeistert, dass wir Thomas direkt im Anschluss noch einen Folgeauftrag für weitere Arbeiten bei uns erteilt haben. Es ist heutzutage gar nicht so leicht, im Raum Böblingen / Sindelfingen Handwerker zu finden, die so zuverlässig, pünktlich und fair arbeiten.
-
-Wer im Kreis (egal ob Böblingen, Sindelfingen, Herrenberg oder Umgebung) einen echten Experten für Türreparaturen, Innenausbau oder allgemeine Renovierungsarbeiten sucht, ist bei Thomas (TFM) in den besten Händen. Ein absoluter Profi, den man jederzeit gerne wieder beauftragt und uneingeschränkt weiterempfehlen kann!`,
+      quote: `Thomas Frenzel hat bei unserem Projekt in Böblingen ein Regalsystem und einen Hängeschrank montiert. Die Ausführung war extrem sauber, durchdacht und zügig. Pünktlich, freundlich, top Werkzeug dabei – das Ergebnis sitzt absolut bombenfest! Wer im Kreis Böblingen einen erfahrenen Handwerker für Möbelmontage sucht, ist hier genau richtig. Gerne wieder!`,
       name: 'V. Tenes',
-      location: 'Sindelfingen',
+      location: 'Böblingen',
       initials: 'VT'
     }
   ];
