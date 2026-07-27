@@ -80,8 +80,6 @@ export const viewport: Viewport = {
   themeColor: "#212121",
 };
 
-import StructuredData from "@/components/StructuredData";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,26 +87,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth" data-scroll-behavior="smooth">
+      <head>
+        <link rel="preload" as="image" href="/hero-tfm.webp" fetchPriority="high" />
+      </head>
       <body
         className={`${sora.variable} ${dmSans.variable} antialiased selection:bg-brand-accent-a10 selection:text-brand-text-acc`}
       >
-        <StructuredData 
-          localBusiness={{
-            name: "Thomas Frenzel · Montage & Handwerk",
-            description: "Persönliche Montage- und Holzarbeiten in Böblingen und Umgebung.",
-            telephone: "+49 170 9980942",
-            email: "info@tf-m.de",
-            streetAddress: "Hohenstaufenstr. 12",
-            postalCode: "71032",
-            addressLocality: "Böblingen",
-            addressRegion: "Baden-Württemberg",
-            addressCountry: "DE"
-          }}
-          person={{
-            name: "Thomas Frenzel",
-            jobTitle: "Holzmechaniker und Montage-Handwerker"
-          }}
-        />
         {children}
       </body>
     </html>
